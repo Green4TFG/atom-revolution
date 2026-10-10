@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dka45pj5mhaer"]
 
-[ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://ck76s7336uhah" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://bajs5gvfnk2cv" path="res://assets/BasicProton.png" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://14suhccgsttx" path="res://levels/camera_smoothing.gd" id="3_g1dw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
@@ -17,7 +17,7 @@ shape = SubResource("CircleShape2D_ri1ak")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1859837792]
 scale = Vector2(0.16, 0.16)
-texture = ExtResource("1_oul6g")
+texture = ExtResource("2_g1dw6")
 
 [node name="electron folder" type="Node2D" parent="." unique_id=1406080891]
 
