@@ -3,9 +3,14 @@
 [ext_resource type="Script" uid="uid://ck76s7336uhah" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://bajs5gvfnk2cv" path="res://assets/BasicProton.png" id="2_g1dw6"]
 [ext_resource type="Script" uid="uid://14suhccgsttx" path="res://levels/camera_smoothing.gd" id="3_g1dw6"]
+[ext_resource type="Shader" uid="uid://dlbl56i5av4sf" path="res://player/player.gdshader" id="3_yw30f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
 radius = 11.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
+shader = ExtResource("3_yw30f")
+shader_parameter/thick = 1.0
 
 [node name="player" type="CharacterBody2D" unique_id=65502379]
 collision_layer = 2
@@ -13,10 +18,17 @@ collision_mask = 3
 script = ExtResource("1_rkbax")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=489582254]
+visible = false
 shape = SubResource("CircleShape2D_ri1ak")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1859837792]
+z_index = 1
 scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_g1dw6")
+
+[node name="outline" type="Sprite2D" parent="Sprite2D" unique_id=533424224]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_17lfe")
 texture = ExtResource("2_g1dw6")
 
 [node name="electron folder" type="Node2D" parent="." unique_id=1406080891]
