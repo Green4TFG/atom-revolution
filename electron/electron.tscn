@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://1dphh42e64sk"]
+
+[ext_resource type="Script" uid="uid://ccf0llgqgury1" path="res://electron/electron.gd" id="1_7yt30"]
+[ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="1_870bh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kva35"]
+radius = 13.0
+
+[node name="electron" type="RigidBody2D" unique_id=1411004449]
+collision_layer = 4
+collision_mask = 7
+linear_damp = 0.9
+script = ExtResource("1_7yt30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1625079406]
+shape = SubResource("CircleShape2D_ri1ak")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=745756722]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_870bh")
+
+[node name="pickup_range" type="Area2D" parent="." unique_id=1441171973]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickup_range" unique_id=7365260]
+shape = SubResource("CircleShape2D_kva35")
+
+[connection signal="body_entered" from="pickup_range" to="." method="_on_pickup_range_body_entered"]

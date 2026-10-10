@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://3md2ko84i7u"]
+
+[ext_resource type="PackedScene" uid="uid://dka45pj5mhaer" path="res://player/player.tscn" id="1_80vhd"]
+[ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="2_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="4_5mrsh"]
+[ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://globals.gd" id="5_safpt"]
+
+[node name="level" type="Node2D" unique_id=647459510]
+
+[node name="globals" type="Node" parent="." unique_id=1738744007]
+script = ExtResource("5_safpt")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1958089824]
+position = Vector2(-10.000122, 61.99997)
+scale = Vector2(24.976563, 11.859376)
+texture = ExtResource("2_hjsbj")
+
+[node name="player" parent="." unique_id=65502379 instance=ExtResource("1_80vhd")]
+position = Vector2(189, 135)
+
+[node name="electron" parent="." unique_id=787043017 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron2" parent="." unique_id=1797736355 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron3" parent="." unique_id=1558766711 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="electron4" parent="." unique_id=1540372217 instance=ExtResource("4_5mrsh")]
+position = Vector2(-280, -132)
+gravity_scale = 0.0
+
+[node name="electron5" parent="." unique_id=360261178 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron6" parent="." unique_id=1408145345 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron7" parent="." unique_id=890619450 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron8" parent="." unique_id=1922967832 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron9" parent="." unique_id=435079359 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron10" parent="." unique_id=1411004449 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron11" parent="." unique_id=1603297818 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron12" parent="." unique_id=1606872462 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="electron13" parent="." unique_id=66342867 instance=ExtResource("4_5mrsh")]
+position = Vector2(-280, -132)
+gravity_scale = 0.0
+
+[node name="electron14" parent="." unique_id=952381577 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron15" parent="." unique_id=802236802 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron16" parent="." unique_id=1123900711 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron17" parent="." unique_id=366601128 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron18" parent="." unique_id=896168344 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron19" parent="." unique_id=628693983 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron20" parent="." unique_id=110512131 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron21" parent="." unique_id=512811465 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="electron22" parent="." unique_id=1148421548 instance=ExtResource("4_5mrsh")]
+position = Vector2(-280, -132)
+gravity_scale = 0.0
+
+[node name="electron23" parent="." unique_id=1240525521 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron24" parent="." unique_id=627052741 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron25" parent="." unique_id=292635464 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron26" parent="." unique_id=1539022043 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron27" parent="." unique_id=1440826474 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron28" parent="." unique_id=861490872 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron29" parent="." unique_id=1719237092 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron30" parent="." unique_id=427230003 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="electron31" parent="." unique_id=1025264316 instance=ExtResource("4_5mrsh")]
+position = Vector2(-280, -132)
+gravity_scale = 0.0
+
+[node name="electron32" parent="." unique_id=338626054 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron33" parent="." unique_id=2113503107 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron34" parent="." unique_id=510474067 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron35" parent="." unique_id=2026207600 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron36" parent="." unique_id=1444028946 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron37" parent="." unique_id=377120649 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron38" parent="." unique_id=1698237462 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron39" parent="." unique_id=535160729 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="electron40" parent="." unique_id=980497711 instance=ExtResource("4_5mrsh")]
+position = Vector2(-280, -132)
+gravity_scale = 0.0
+
+[node name="electron41" parent="." unique_id=1194978315 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron42" parent="." unique_id=1382857479 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron43" parent="." unique_id=2035930491 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron44" parent="." unique_id=216126768 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron45" parent="." unique_id=1791741630 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron46" parent="." unique_id=785490957 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron47" parent="." unique_id=85118552 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron48" parent="." unique_id=507718927 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="electron49" parent="." unique_id=690773477 instance=ExtResource("4_5mrsh")]
+position = Vector2(-280, -132)
+gravity_scale = 0.0
+
+[node name="electron50" parent="." unique_id=651315222 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron51" parent="." unique_id=159295274 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron52" parent="." unique_id=1555928827 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron53" parent="." unique_id=11850551 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron54" parent="." unique_id=465463373 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0

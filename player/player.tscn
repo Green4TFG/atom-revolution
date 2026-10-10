@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dka45pj5mhaer"]
+
+[ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://ck76s7336uhah" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Script" uid="uid://14suhccgsttx" path="res://levels/camera_smoothing.gd" id="3_g1dw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
+radius = 11.0
+
+[node name="player" type="CharacterBody2D" unique_id=65502379]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_rkbax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=489582254]
+shape = SubResource("CircleShape2D_ri1ak")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1859837792]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("1_oul6g")
+
+[node name="electron folder" type="Node2D" parent="." unique_id=1406080891]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1405479913]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 30.0
+script = ExtResource("3_g1dw6")

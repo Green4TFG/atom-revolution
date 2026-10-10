@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bgah8wptarpd"]
+
+[ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="1_x4t7o"]
+[ext_resource type="Script" uid="uid://dfp2by5xxtrrr" path="res://electron/electron_visual.gd" id="2_cxh5r"]
+
+[node name="electron visual" type="Sprite2D" unique_id=1724217778]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_x4t7o")
+script = ExtResource("2_cxh5r")
