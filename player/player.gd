@@ -8,8 +8,7 @@ const ZOOM_RATIOS = [3,2,1.5,1.25,1,0.75,0.5,0.25]
 const PULL_FORCE = 10000
 
 const ROT_SPEED = 1.0
-const RING_SUMS = [2, 10, 18, 36, 54, 86, 118]
-var RING_COUNTS = [2, 8, 8, 18, 18] #UPDATE THIS BASED ON DIFFICULTY
+
 
 const SPEED = 500
 const JUMP_VELOCITY = -400.0
@@ -46,7 +45,7 @@ func add_electron():
 	electron.global_position = global_position
 	electron.ring = Globals.rings
 	electron.true_number = electron_num
-	electron.number = electron_num - 1 - (RING_SUMS[Globals.rings - 1] if Globals.rings > 0 else 0)
+	electron.number = electron_num - 1 - ((Globals.RING_COUNTS.slice(0,Globals.rings - 1)).reduce(sum,0)  if Globals.rings > 0 else 0)
 	electron.calc_vector()
 	
 	electrons.append(electron)
@@ -57,3 +56,6 @@ func add_electron():
 func update_electrons():
 	for child in electron_folder.get_children():
 		child.calc_vector()
+		
+func sum(accum, number):
+	return accum + number

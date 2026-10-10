@@ -14,8 +14,7 @@ func _ready() -> void:
 
 func calc_vector():
 	var distance = (ring+1)*(RING_SIZE)
-	var section_size = (2 * PI)/Globals.player.RING_COUNTS[ring]
-	print(section_size)
+	var section_size = (2 * PI)/Globals.RING_COUNTS[ring]
 	myVector = Vector2(distance,0).rotated(section_size*(number))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
