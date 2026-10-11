@@ -3,12 +3,15 @@ extends CharacterBody2D
 @onready var electron_folder: Node2D = $"electron folder"
 @onready var nuclei_folder: Node2D = $"nuclei folder"
 @onready var camera: Camera2D = $Camera2D
+@onready var electron_pickup: RayCast2D = $RayCast2D
 
-const ZOOM_RATIOS = [2.5,1.9,1.4,1.15,0.9,0.75,0.5,0.25]
+
+
+const ZOOM_RATIOS = [2,1.5,1.2,1,0.8,0.5,0.3,0.2]
 
 const PULL_FORCE = 10000
 
-const ROT_SPEED = 3.0
+const ROT_SPEED = 2.0
 
 const SPEED = 500
 const JUMP_VELOCITY = -400.0
@@ -21,9 +24,12 @@ var degrees = 0.0
 
 const NUCLEI = preload("uid://xv7ycaa57amx")
 const PROTON_VISUAL = preload("uid://c8pb1unl7wj75")
-const protons = [2, 4, 6, 9, 21]
+const protons = [2, 4, 6, 9, 21, 30]
 const NUETRON_VISUAL = preload("uid://dh7o14qbgck7t")
-const nuetrons = [2, 4, 7, 12, 33]
+const nuetrons = [2, 4, 7, 12, 33, 44]
+
+var ring_counts = Globals.RING_COUNTS
+var ring_size = Globals.RING_SIZE
 
 func _ready() -> void:
 	Globals.player = self
@@ -40,23 +46,29 @@ func _physics_process(delta: float) -> void:
 	velocity.y *= FRICTION
 	
 	degrees +=  ROT_SPEED * delta
-	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5)),ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5)))
+	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)),ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)))
+	
+	electron_pickup.target_position.x = (Globals.rings+2) * Globals.RING_SIZE + Globals.FIRST_RING
+	electron_pickup.look_at(get_global_mouse_position())
 	
 	move_and_slide()
 
 func add_electron():
 	electron_num+=1
-	Globals.rings = Globals.find_ring(electron_num)
+	Globals.rings = Globals.find_ring(electron_num, Globals.RING_SUMS)
 	var electron = ELECTRON_VISUAL.instantiate()
+	electron.parent = self
 	electron.global_position = global_position
 	electron.ring = Globals.rings
 	electron.true_number = electron_num
 	electron.number = electron_num - 1 - ((Globals.RING_COUNTS.slice(0,Globals.rings - 1)).reduce(sum,0)  if Globals.rings > 0 else 0)
 	electron.calc_vector()
+	electron.get_node("hitbox").collision_layer = 6
+	electron.get_node("hitbox").collision_mask = 6
 	
 	electrons.append(electron)
 	
-	electron_folder.add_child(electron)
+	electron_folder.call_deferred("add_child", electron)
 	update_electrons()
 
 func update_electrons():
@@ -72,6 +84,7 @@ func add_nuclei():
 	for i in range(nuetronNum):
 		var nuetron = NUETRON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
+		rigidbody.parent = self
 		rigidbody.add_child(nuetron)
 		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
 		nuetron.position = Vector2(0,0)
@@ -81,6 +94,7 @@ func add_nuclei():
 	for i in range(protonNum):
 		var proton = PROTON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
+		rigidbody.parent = self
 		rigidbody.add_child(proton)
 		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
 		proton.position = Vector2(0,0)

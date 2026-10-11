@@ -8,6 +8,8 @@
 shader = ExtResource("3_ti3ud")
 shader_parameter/thick = 2.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kva35"]
+
 [node name="electron visual" type="Sprite2D" unique_id=1724217778]
 z_index = 1
 scale = Vector2(0.8, 0.8)
@@ -18,3 +20,10 @@ script = ExtResource("2_cxh5r")
 z_index = -1
 material = SubResource("ShaderMaterial_17lfe")
 texture = ExtResource("1_cxh5r")
+
+[node name="hitbox" type="Area2D" parent="." unique_id=542498412]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1870486098]
+shape = SubResource("CircleShape2D_kva35")

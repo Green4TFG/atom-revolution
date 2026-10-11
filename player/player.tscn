@@ -23,3 +23,9 @@ position_smoothing_speed = 30.0
 script = ExtResource("3_g1dw6")
 
 [node name="nuclei folder" type="Node2D" parent="." unique_id=170725851]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1265883342]
+target_position = Vector2(0, 0)
+collision_mask = 16
+collide_with_areas = true
+collide_with_bodies = false

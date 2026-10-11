@@ -12,12 +12,13 @@
 script = ExtResource("5_safpt")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1958089824]
+modulate = Color(1, 0, 1, 1)
 position = Vector2(-10.000122, 61.99997)
 scale = Vector2(24.976563, 11.859376)
 texture = ExtResource("2_hjsbj")
 
 [node name="player" parent="." unique_id=65502379 instance=ExtResource("1_80vhd")]
-position = Vector2(189, 135)
+position = Vector2(-84, 289)
 
 [node name="electron" parent="." unique_id=787043017 instance=ExtResource("4_5mrsh")]
 position = Vector2(-284, -41)
@@ -48,10 +49,64 @@ position = Vector2(-434, 7)
 gravity_scale = 0.0
 
 [node name="enemy2" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
-position = Vector2(-233, 231)
+position = Vector2(644, 454)
 gravity_scale = 0.0
-ring_counts = [2, 8, 18, 8]
+element = 2
 
 [node name="enemy" parent="." unique_id=897077428 instance=ExtResource("5_gjl0y")]
-position = Vector2(-133, 120)
+position = Vector2(198, 265)
+gravity_scale = 0.0
+
+[node name="electron8" parent="." unique_id=1411004449 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron9" parent="." unique_id=759181578 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron10" parent="." unique_id=1243339737 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="electron11" parent="." unique_id=51033489 instance=ExtResource("4_5mrsh")]
+position = Vector2(-280, -132)
+gravity_scale = 0.0
+
+[node name="electron12" parent="." unique_id=1293713093 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron13" parent="." unique_id=209280415 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron14" parent="." unique_id=1772031148 instance=ExtResource("4_5mrsh")]
+position = Vector2(-434, 7)
+gravity_scale = 0.0
+
+[node name="electron15" parent="." unique_id=1467213488 instance=ExtResource("4_5mrsh")]
+position = Vector2(-284, -41)
+gravity_scale = 0.0
+
+[node name="electron16" parent="." unique_id=1812152560 instance=ExtResource("4_5mrsh")]
+position = Vector2(-135, -57)
+gravity_scale = 0.0
+
+[node name="electron17" parent="." unique_id=428916366 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
+gravity_scale = 0.0
+
+[node name="enemy3" parent="." unique_id=1987640203 instance=ExtResource("5_gjl0y")]
+position = Vector2(644, 39)
+gravity_scale = 0.0
+element = 3
+
+[node name="enemy4" parent="." unique_id=1777840627 instance=ExtResource("5_gjl0y")]
+position = Vector2(1124, 204)
+gravity_scale = 0.0
+element = 4
+
+[node name="electron18" parent="." unique_id=1831759373 instance=ExtResource("4_5mrsh")]
+position = Vector2(-279, 64)
 gravity_scale = 0.0

@@ -1,6 +1,11 @@
 extends RigidBody2D
 
 const PULL_FORCE = 400000
+var parent = null
+
+
 
 func _physics_process(delta: float) -> void:
-	apply_central_force(global_position.direction_to(Globals.player.global_position) * PULL_FORCE * delta)
+	if(parent):
+		apply_central_force(global_position.direction_to(parent.global_position) * PULL_FORCE * delta)
+		

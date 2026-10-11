@@ -1,12 +1,16 @@
 extends Node
 
+const RING_SIZE = 30
+const FIRST_RING = 40
 
 var player
 var rings = 0.0
 
-var RING_COUNTS = [2, 8, 18, 8] #UPDATE THIS BASED ON DIFFICULTY
-var ELEMENT = 4 #1 is Helium, 5 is Radon
+const ELECTRON_COUNTS = [[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
 
+
+var ELEMENT = 2 #1 is Helium, 5 is Radon
+var RING_COUNTS = ELECTRON_COUNTS[ELEMENT-1]
 var RING_SUMS = []
 
 func _ready() -> void:
@@ -14,9 +18,9 @@ func _ready() -> void:
 		RING_SUMS.append( RING_COUNTS.slice(0,i+1).reduce(sum,0))
 	
 	
-func find_ring(electron_num: float):
-	for i in RING_SUMS.size() :
-		if(electron_num - RING_SUMS[i] < 1):
+func find_ring(electron_num: float,ring_array):
+	for i in ring_array.size() :
+		if(electron_num - ring_array[i] < 1):
 			return float(i) 
 
 

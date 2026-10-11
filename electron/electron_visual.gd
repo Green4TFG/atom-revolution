@@ -1,8 +1,8 @@
 extends Sprite2D
 
-const RING_SIZE = 30
-const FIRST_RING = 40
+@onready var hitbox: Area2D = $hitbox
 
+var parent = null
 var ring = 0;
 var true_number = 0;
 var number = 0;
@@ -14,8 +14,8 @@ func _ready() -> void:
 	pass
 
 func calc_vector():
-	var distance = (ring+1)*(RING_SIZE) + FIRST_RING
-	var section_size = (2 * PI)/Globals.RING_COUNTS[ring]
+	var distance = (ring+1)*(Globals.RING_SIZE) + Globals.FIRST_RING
+	var section_size = (2 * PI)/parent.ring_counts[ring]
 	myVector = Vector2(distance,0).rotated(section_size*(number))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
