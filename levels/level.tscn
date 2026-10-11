@@ -13,6 +13,7 @@ script = ExtResource("5_safpt")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1958089824]
 modulate = Color(1, 0, 1, 1)
+z_index = -3000
 position = Vector2(-10.000122, 61.99997)
 scale = Vector2(24.976563, 11.859376)
 texture = ExtResource("2_hjsbj")
