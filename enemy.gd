@@ -59,7 +59,7 @@ func add_nuclei():
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.parent = self
 		rigidbody.add_child(nuetron)
-		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
+		rigidbody.position = Vector2(randf_range(-100,100),randf_range(-100,100))
 		nuetron.position = Vector2(0,0)
 		nuclei_folder.add_child(rigidbody)
 	#creates protons
@@ -69,6 +69,6 @@ func add_nuclei():
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.parent = self
 		rigidbody.add_child(proton)
-		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
+		rigidbody.position = Vector2(randf_range(-50,50),randf_range(-50,50))
 		proton.position = Vector2(0,0)
 		nuclei_folder.add_child(rigidbody)
