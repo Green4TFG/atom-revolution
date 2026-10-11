@@ -71,17 +71,18 @@ func add_nuclei():
 	var nuetronNum = nuetrons[Globals.element()-1]
 	for i in range(nuetronNum):
 		var nuetron = NUETRON_VISUAL.instantiate();
-		var nuclei = NUCLEI.instantiate()
-		nuetron.position = Vector2(randf_range(-50,50),randf_range(-50,50))
-		nuclei.add_child(nuetron)
+		var rigidbody = NUCLEI.instantiate()
+		rigidbody.z_index = randf_range(0,4);
+		print(nuetron.find_child("Sprite2D"))
+		rigidbody.add_child(nuetron)
 		nuetron.position = Vector2(0,0)
-		nuclei_folder.add_child(nuclei)
+		nuclei_folder.add_child(rigidbody)
 	#creates protons
 	var protonNum = protons[Globals.element()-1]
 	for i in range(protonNum):
 		var proton = PROTON_VISUAL.instantiate();
-		var nuclei = NUCLEI.instantiate()
-		nuclei.position = Vector2(randf_range(-50,50),randf_range(-50,50))
-		nuclei.add_child(proton)
+		var rigidbody = NUCLEI.instantiate()
+		rigidbody.z_index = randf_range(0,4);
+		rigidbody.add_child(proton)
 		proton.position = Vector2(0,0)
-		nuclei_folder.add_child(nuclei)
+		nuclei_folder.add_child(rigidbody)
