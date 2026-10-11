@@ -69,20 +69,21 @@ func sum(accum, number):
 func add_nuclei():
 	#creates nuetrons
 	var nuetronNum = nuetrons[Globals.element()-1]
-	for i in range(nuetronNum):
+	for i in range(nuetronNum/4):
 		var nuetron = NUETRON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.z_index = randf_range(0,4);
-		print(nuetron.find_child("Sprite2D"))
 		rigidbody.add_child(nuetron)
+		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
 		nuetron.position = Vector2(0,0)
 		nuclei_folder.add_child(rigidbody)
 	#creates protons
 	var protonNum = protons[Globals.element()-1]
-	for i in range(protonNum):
+	for i in range(protonNum/4):
 		var proton = PROTON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.z_index = randf_range(0,4);
 		rigidbody.add_child(proton)
+		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
 		proton.position = Vector2(0,0)
 		nuclei_folder.add_child(rigidbody)
