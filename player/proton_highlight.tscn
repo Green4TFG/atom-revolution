@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://brv53b7c4tex6"]
+
+[ext_resource type="Texture2D" uid="uid://bdglf31ukn3h" path="res://assets/ProtonHighlight.png" id="1_nuoie"]
+
+[node name="ProtonHighlight" type="Sprite2D" unique_id=1591892172]
+show_behind_parent = true
+texture = ExtResource("1_nuoie")

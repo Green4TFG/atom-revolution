@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c8pb1unl7wj75"]
 
-[ext_resource type="Texture2D" uid="uid://brq0hv638upvn" path="res://assets/FinalizedProton.png" id="1_6w07u"]
+[ext_resource type="Texture2D" uid="uid://b1qhpql4gc6nl" path="res://assets/ProtonSymbol.png" id="1_v4ci0"]
 [ext_resource type="Shader" uid="uid://dlbl56i5av4sf" path="res://player/player.gdshader" id="2_v4ci0"]
+[ext_resource type="Texture2D" uid="uid://crvphb6jwxbdo" path="res://assets/ProtonBase.png" id="3_cxx4k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cxx4k"]
 shader = ExtResource("2_v4ci0")
@@ -9,10 +10,16 @@ shader_parameter/thick = 2.0
 
 [node name="ProtonVisual" type="Sprite2D" unique_id=1910938141]
 z_index = 1
-texture = ExtResource("1_6w07u")
+texture = ExtResource("1_v4ci0")
+
+[node name="body" type="Sprite2D" parent="." unique_id=1664901105]
+show_behind_parent = true
+z_index = -2
+texture = ExtResource("3_cxx4k")
 
 [node name="outline" type="Sprite2D" parent="." unique_id=1366804391]
 show_behind_parent = true
-z_index = -1
+z_index = -5
+z_as_relative = false
 material = SubResource("ShaderMaterial_cxx4k")
-texture = ExtResource("1_6w07u")
+texture = ExtResource("3_cxx4k")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dh7o14qbgck7t"]
 
-[ext_resource type="Texture2D" uid="uid://dc7q4kw4va36g" path="res://assets/FinalizedNeutron.png" id="1_5d348"]
+[ext_resource type="Texture2D" uid="uid://csnyujdo8mfu3" path="res://assets/NeutronBase.png" id="2_5d348"]
 [ext_resource type="Shader" uid="uid://dgsds4e7yg8uk" path="res://player/neutron_visual.gdshader" id="2_hctgq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
@@ -8,10 +8,11 @@ shader = ExtResource("2_hctgq")
 shader_parameter/thick = 2.0
 
 [node name="NeutronVisual" type="Sprite2D" unique_id=2146740267]
-z_index = 1
-texture = ExtResource("1_5d348")
+z_index = -1
+texture = ExtResource("2_5d348")
 
 [node name="outline" type="Sprite2D" parent="." unique_id=148197870]
-z_index = -1
+z_index = -5
+z_as_relative = false
 material = SubResource("ShaderMaterial_17lfe")
-texture = ExtResource("1_5d348")
+texture = ExtResource("2_5d348")

@@ -43,7 +43,7 @@ func add_electrons():
 		electron.global_position = global_position
 		electron.ring = rings
 		electron.true_number = electron_num
-		print(rings)
+		
 		electron.number = electron_num - 1 - ((ring_counts.slice(0,rings - 1)).reduce(sum,0)  if rings > 0 else 0)
 		electron.calc_vector()
 	
