@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var nuclei_folder: Node2D = $"nuclei folder"
 @onready var camera: Camera2D = $Camera2D
 @onready var electron_pickup: RayCast2D = $RayCast2D
-
+@onready var face: AnimatedSprite2D = $face
 
 
 const ZOOM_RATIOS = [2,1.5,1.2,1,0.8,0.5,0.3,0.2]
@@ -33,6 +33,7 @@ var ring_size = Globals.RING_SIZE
 
 func _ready() -> void:
 	Globals.player = self
+	face.play("idle")
 	add_nuclei()
 
 func _physics_process(delta: float) -> void:
