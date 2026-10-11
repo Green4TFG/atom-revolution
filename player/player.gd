@@ -4,11 +4,11 @@ extends CharacterBody2D
 @onready var nuclei_folder: Node2D = $"nuclei folder"
 @onready var camera: Camera2D = $Camera2D
 
-const ZOOM_RATIOS = [3,2,1.5,1.25,1,0.75,0.5,0.25]
+const ZOOM_RATIOS = [2.5,1.9,1.4,1.15,0.9,0.75,0.5,0.25]
 
 const PULL_FORCE = 10000
 
-const ROT_SPEED = 1.0
+const ROT_SPEED = 3.0
 
 const SPEED = 500
 const JUMP_VELOCITY = -400.0
@@ -21,9 +21,9 @@ var degrees = 0.0
 
 const NUCLEI = preload("uid://xv7ycaa57amx")
 const PROTON_VISUAL = preload("uid://c8pb1unl7wj75")
-const protons = [2, 10, 18, 36, 86]
+const protons = [2, 4, 6, 9, 21]
 const NUETRON_VISUAL = preload("uid://dh7o14qbgck7t")
-const nuetrons = [2, 10, 22, 54, 134]
+const nuetrons = [2, 4, 7, 12, 33]
 
 func _ready() -> void:
 	Globals.player = self
@@ -39,8 +39,8 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y *= FRICTION
 	
-	degrees =  0.0 if (degrees > 2*PI) else (degrees + (ROT_SPEED * delta))
-	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings],ZOOM_RATIOS[Globals.rings])
+	degrees +=  ROT_SPEED * delta
+	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5)),ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5)))
 	
 	move_and_slide()
 
@@ -68,8 +68,8 @@ func sum(accum, number):
 
 func add_nuclei():
 	#creates nuetrons
-	var nuetronNum = nuetrons[Globals.element()-1]
-	for i in range(nuetronNum/4):
+	var nuetronNum = nuetrons[Globals.ELEMENT-1]
+	for i in range(nuetronNum):
 		var nuetron = NUETRON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.add_child(nuetron)
@@ -77,8 +77,8 @@ func add_nuclei():
 		nuetron.position = Vector2(0,0)
 		nuclei_folder.add_child(rigidbody)
 	#creates protons
-	var protonNum = protons[Globals.element()-1]
-	for i in range(protonNum/4):
+	var protonNum = protons[Globals.ELEMENT-1]
+	for i in range(protonNum):
 		var proton = PROTON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.add_child(proton)

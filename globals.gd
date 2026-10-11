@@ -19,8 +19,6 @@ func find_ring(electron_num: float):
 		if(electron_num - RING_SUMS[i] < 1):
 			return float(i) 
 
-func element():
-	return ELEMENT
 
 func sum(accum, number):
 	return accum + number
