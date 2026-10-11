@@ -1,25 +1,30 @@
 [gd_scene format=3 uid="uid://bgah8wptarpd"]
 
-[ext_resource type="Texture2D" uid="uid://cy1sfpi4xedu4" path="res://assets/SketchElectron.png" id="1_cxh5r"]
 [ext_resource type="Script" uid="uid://dfp2by5xxtrrr" path="res://electron/electron_visual.gd" id="2_cxh5r"]
 [ext_resource type="Shader" uid="uid://c73e83bryp26q" path="res://electron/electron_visual.gdshader" id="3_ti3ud"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cxh5r"]
+load_path = "res://.godot/imported/FinalizedElectron.png-e9e12837bf622b0d23fe2a75a21dc6eb.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
 shader = ExtResource("3_ti3ud")
 shader_parameter/thick = 2.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ti3ud"]
+load_path = "res://.godot/imported/FinalizedElectron.png-e9e12837bf622b0d23fe2a75a21dc6eb.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kva35"]
 
 [node name="electron visual" type="Sprite2D" unique_id=1724217778]
 z_index = 1
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("1_cxh5r")
+texture = SubResource("CompressedTexture2D_cxh5r")
 script = ExtResource("2_cxh5r")
 
 [node name="outline" type="Sprite2D" parent="." unique_id=1291821897]
 z_index = -1
 material = SubResource("ShaderMaterial_17lfe")
-texture = ExtResource("1_cxh5r")
+texture = SubResource("CompressedTexture2D_ti3ud")
 
 [node name="hitbox" type="Area2D" parent="." unique_id=542498412]
 collision_layer = 16

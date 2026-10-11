@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8pb1unl7wj75"]
 
-[ext_resource type="Texture2D" uid="uid://bajs5gvfnk2cv" path="res://assets/BasicProton.png" id="1_6w07u"]
+[ext_resource type="Texture2D" uid="uid://brq0hv638upvn" path="res://assets/FinalizedProton.png" id="1_6w07u"]
 [ext_resource type="Shader" uid="uid://dlbl56i5av4sf" path="res://player/player.gdshader" id="2_v4ci0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cxx4k"]

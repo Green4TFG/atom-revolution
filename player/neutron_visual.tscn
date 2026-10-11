@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dh7o14qbgck7t"]
 
-[ext_resource type="Texture2D" uid="uid://cnv2vkpp30j0c" path="res://assets/BasicNuetron.png" id="1_5d348"]
+[ext_resource type="Texture2D" uid="uid://dc7q4kw4va36g" path="res://assets/FinalizedNeutron.png" id="1_5d348"]
 [ext_resource type="Shader" uid="uid://dgsds4e7yg8uk" path="res://player/neutron_visual.gdshader" id="2_hctgq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]

@@ -25,7 +25,7 @@ void fragment() {
     if(alpha > 0.5){
         COLOR = texture(TEXTURE,UV);
     } else if(outline > 0.5){
-        COLOR = vec4(0.288, 0.408, 0.8, 1.0);
+        COLOR = vec4(0.20784, 0.29020, 0.69804, 1.0);
     } else {
         COLOR = vec4(0);
     }
