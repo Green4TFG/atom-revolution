@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xv7ycaa57amx"]
+
+[ext_resource type="Script" uid="uid://b4f4whr0o1qhi" path="res://player/nuclei.gd" id="1_vaa6w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
+radius = 5.0
+
+[node name="nuclei" type="RigidBody2D" unique_id=683192422]
+collision_layer = 8
+collision_mask = 10
+gravity_scale = 0.0
+script = ExtResource("1_vaa6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=792716722]
+shape = SubResource("CircleShape2D_ri1ak")

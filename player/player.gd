@@ -19,6 +19,7 @@ var electrons = []
 var electron_num = 0.0
 var degrees = 0.0
 
+const NUCLEI = preload("uid://xv7ycaa57amx")
 const PROTON_VISUAL = preload("uid://c8pb1unl7wj75")
 const protons = [2, 10, 18, 36, 86]
 const NUETRON_VISUAL = preload("uid://dh7o14qbgck7t")
@@ -70,11 +71,17 @@ func add_nuclei():
 	var nuetronNum = nuetrons[Globals.element()-1]
 	for i in range(nuetronNum):
 		var nuetron = NUETRON_VISUAL.instantiate();
+		var nuclei = NUCLEI.instantiate()
 		nuetron.position = Vector2(randf_range(-50,50),randf_range(-50,50))
-		nuclei_folder.add_child(nuetron)
+		nuclei.add_child(nuetron)
+		nuetron.position = Vector2(0,0)
+		nuclei_folder.add_child(nuclei)
 	#creates protons
 	var protonNum = protons[Globals.element()-1]
 	for i in range(protonNum):
 		var proton = PROTON_VISUAL.instantiate();
-		proton.position = Vector2(randf_range(-50,50),randf_range(-50,50))
-		nuclei_folder.add_child(proton)
+		var nuclei = NUCLEI.instantiate()
+		nuclei.position = Vector2(randf_range(-50,50),randf_range(-50,50))
+		nuclei.add_child(proton)
+		proton.position = Vector2(0,0)
+		nuclei_folder.add_child(nuclei)
