@@ -21,4 +21,5 @@ func calc_vector():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	position = myVector.rotated(Globals.player.degrees/(ring+1))
+	visible = true
 	

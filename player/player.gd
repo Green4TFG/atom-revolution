@@ -68,7 +68,7 @@ func add_electron():
 	electron.get_node("hitbox").collision_mask = 6
 	
 	electrons.append(electron)
-	
+	electron.visible = false
 	electron_folder.call_deferred("add_child", electron)
 	update_electrons()
 
