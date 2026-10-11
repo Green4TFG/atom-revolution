@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyh0l340bdamt"
-path="res://.godot/imported/ElectronProgressRing.png-f65773ccbad8e265a396fbe187451454.ctex"
+uid="uid://c8gdb7uamgo8q"
+path="res://.godot/imported/ElectronCollectionMeter.png-af68b2cbdbe7de3374339244946c2ddc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ElectronProgressRing.png"
-dest_files=["res://.godot/imported/ElectronProgressRing.png-f65773ccbad8e265a396fbe187451454.ctex"]
+source_file="res://assets/ElectronCollectionMeter.png"
+dest_files=["res://.godot/imported/ElectronCollectionMeter.png-af68b2cbdbe7de3374339244946c2ddc.ctex"]
 
 [params]
 

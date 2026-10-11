@@ -122,3 +122,15 @@ func add_nuclei():
 		proton.position = Vector2(0,0)
 		proton.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
+
+
+func _on_electron_pickup_area_entered(area: Area2D) -> void:
+	if(area.get_parent() is electron_visual):
+		area.get_parent().increment = true
+
+
+
+
+func _on_electron_pickup_area_exited(area: Area2D) -> void:
+	if(area.get_parent() is electron_visual):
+		area.get_parent().increment = false

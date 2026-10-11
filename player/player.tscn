@@ -87,6 +87,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
 radius = 11.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kva35"]
+radius = 61.522354
+
 [node name="player" type="CharacterBody2D" unique_id=65502379]
 collision_layer = 2
 collision_mask = 3
@@ -118,6 +121,15 @@ script = ExtResource("3_g1dw6")
 [node name="nuclei folder" type="Node2D" parent="." unique_id=170725851]
 
 [node name="electronPickup" type="Area2D" parent="." unique_id=847700836]
+collision_mask = 16
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="electronPickup" unique_id=1730990823]
-polygon = PackedVector2Array(34, 0, 33, 9, 30, 17, 24, 24, 17, 29, 9, 33, 0, 34, -9, 33, -16, 30, -23, 25, -29, 18, -33, 9, -34, 0, -33, -9, -30, -17, -24, -24, -17, -29, -9, -33, 0, -34, 0, -51, -13, -50, -25, -44, -35, -37, -43, -26, -48, -15, -50, -1, -48, 13, -44, 24, -35, 34, -25, 42, -14, 47, 0, 49, 16, 47, 25, 42, 36, 34, 44, 23, 49, 10, 50, -4, 47, -19, 38, -33, 27, -43, 12, -49, 0, -51, 0, -34, 9, -33, 17, -29, 24, -24, 29, -17, 33, -8)
+polygon = PackedVector2Array(34, 0, 33, 9, 30, 17, 24, 24, 17, 29, 9, 33, 0, 34, -9, 33, -16, 30, -23, 25, -29, 18, -33, 9, -34, 0, -33, -9, -30, -17, -24, -24, -17, -29, -9, -33, 0, -34, 0, -62, -16, -59, -31, -54, -43, -45, -54, -29, -60, -14, -61, 1, -59, 17, -53, 31, -44, 43, -30, 54, -15, 60, 0, 62, 18, 59, 31, 53, 44, 43, 54, 30, 60, 16, 61, -3, 57, -24, 44, -43, 32, -53, 16, -60, 0, -62, 0, -34, 9, -33, 17, -29, 24, -24, 29, -17, 33, -8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=46934691]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=361439317]
+shape = SubResource("CircleShape2D_kva35")
+
+[connection signal="area_entered" from="electronPickup" to="." method="_on_electron_pickup_area_entered"]
+[connection signal="area_exited" from="electronPickup" to="." method="_on_electron_pickup_area_exited"]
