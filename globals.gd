@@ -12,7 +12,6 @@ var RING_SUMS = []
 func _ready() -> void:
 	for i in RING_COUNTS.size() :
 		RING_SUMS.append( RING_COUNTS.slice(0,i+1).reduce(sum,0))
-	print(RING_SUMS)
 	
 	
 func find_ring(electron_num: float):

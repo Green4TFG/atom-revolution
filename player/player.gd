@@ -71,6 +71,7 @@ func add_nuclei():
 	var nuetronNum = nuetrons[Globals.element()-1]
 	for i in range(nuetronNum/4):
 		var nuetron = NUETRON_VISUAL.instantiate();
+		nuetron.z_index = 1000
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.z_index = randf_range(0,4);
 		rigidbody.add_child(nuetron)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cpv6u1irvd0xh"]
+
+[ext_resource type="Script" uid="uid://cdhcqyk8bywrb" path="res://enemy.gd" id="1_2mvqj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
+radius = 23.086792
+
+[node name="enemy" type="RigidBody2D" unique_id=276251561]
+script = ExtResource("1_2mvqj")
+
+[node name="electron folder" type="Node2D" parent="." unique_id=730489652]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=979532970]
+shape = SubResource("CircleShape2D_ri1ak")

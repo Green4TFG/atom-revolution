@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dka45pj5mhaer" path="res://player/player.tscn" id="1_80vhd"]
 [ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="2_hjsbj"]
 [ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="4_5mrsh"]
+[ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_gjl0y"]
 [ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://globals.gd" id="5_safpt"]
 
 [node name="level" type="Node2D" unique_id=647459510]
@@ -45,3 +46,6 @@ gravity_scale = 0.0
 [node name="electron7" parent="." unique_id=890619450 instance=ExtResource("4_5mrsh")]
 position = Vector2(-434, 7)
 gravity_scale = 0.0
+
+[node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
+position = Vector2(-157, 202)
