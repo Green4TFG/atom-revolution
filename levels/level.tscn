@@ -2,9 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dka45pj5mhaer" path="res://player/player.tscn" id="1_80vhd"]
 [ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="2_hjsbj"]
-[ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="4_5mrsh"]
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_gjl0y"]
-[ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://globals.gd" id="5_safpt"]
+[ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://utils/globals.gd" id="5_safpt"]
 
 [node name="level" type="Node2D" unique_id=647459510]
 
@@ -21,93 +20,7 @@ texture = ExtResource("2_hjsbj")
 [node name="player" parent="." unique_id=65502379 instance=ExtResource("1_80vhd")]
 position = Vector2(-84, 289)
 
-[node name="electron" parent="." unique_id=787043017 instance=ExtResource("4_5mrsh")]
-position = Vector2(-284, -41)
-gravity_scale = 0.0
+[node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
+position = Vector2(196, 309)
 
-[node name="electron2" parent="." unique_id=1797736355 instance=ExtResource("4_5mrsh")]
-position = Vector2(-135, -57)
-gravity_scale = 0.0
-
-[node name="electron3" parent="." unique_id=1558766711 instance=ExtResource("4_5mrsh")]
-position = Vector2(-279, 64)
-gravity_scale = 0.0
-
-[node name="electron4" parent="." unique_id=1540372217 instance=ExtResource("4_5mrsh")]
-position = Vector2(-280, -132)
-gravity_scale = 0.0
-
-[node name="electron5" parent="." unique_id=360261178 instance=ExtResource("4_5mrsh")]
-position = Vector2(-434, 7)
-gravity_scale = 0.0
-
-[node name="electron6" parent="." unique_id=1408145345 instance=ExtResource("4_5mrsh")]
-position = Vector2(-434, 7)
-gravity_scale = 0.0
-
-[node name="electron7" parent="." unique_id=890619450 instance=ExtResource("4_5mrsh")]
-position = Vector2(-434, 7)
-gravity_scale = 0.0
-
-[node name="enemy2" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
-position = Vector2(644, 454)
-gravity_scale = 0.0
-element = 2
-
-[node name="enemy" parent="." unique_id=897077428 instance=ExtResource("5_gjl0y")]
-position = Vector2(198, 265)
-gravity_scale = 0.0
-
-[node name="electron8" parent="." unique_id=1411004449 instance=ExtResource("4_5mrsh")]
-position = Vector2(-284, -41)
-gravity_scale = 0.0
-
-[node name="electron9" parent="." unique_id=759181578 instance=ExtResource("4_5mrsh")]
-position = Vector2(-135, -57)
-gravity_scale = 0.0
-
-[node name="electron10" parent="." unique_id=1243339737 instance=ExtResource("4_5mrsh")]
-position = Vector2(-279, 64)
-gravity_scale = 0.0
-
-[node name="electron11" parent="." unique_id=51033489 instance=ExtResource("4_5mrsh")]
-position = Vector2(-280, -132)
-gravity_scale = 0.0
-
-[node name="electron12" parent="." unique_id=1293713093 instance=ExtResource("4_5mrsh")]
-position = Vector2(-434, 7)
-gravity_scale = 0.0
-
-[node name="electron13" parent="." unique_id=209280415 instance=ExtResource("4_5mrsh")]
-position = Vector2(-434, 7)
-gravity_scale = 0.0
-
-[node name="electron14" parent="." unique_id=1772031148 instance=ExtResource("4_5mrsh")]
-position = Vector2(-434, 7)
-gravity_scale = 0.0
-
-[node name="electron15" parent="." unique_id=1467213488 instance=ExtResource("4_5mrsh")]
-position = Vector2(-284, -41)
-gravity_scale = 0.0
-
-[node name="electron16" parent="." unique_id=1812152560 instance=ExtResource("4_5mrsh")]
-position = Vector2(-135, -57)
-gravity_scale = 0.0
-
-[node name="electron17" parent="." unique_id=428916366 instance=ExtResource("4_5mrsh")]
-position = Vector2(-279, 64)
-gravity_scale = 0.0
-
-[node name="enemy3" parent="." unique_id=1987640203 instance=ExtResource("5_gjl0y")]
-position = Vector2(644, 39)
-gravity_scale = 0.0
-element = 3
-
-[node name="enemy4" parent="." unique_id=1777840627 instance=ExtResource("5_gjl0y")]
-position = Vector2(1124, 204)
-gravity_scale = 0.0
-element = 4
-
-[node name="electron18" parent="." unique_id=1831759373 instance=ExtResource("4_5mrsh")]
-position = Vector2(-279, 64)
-gravity_scale = 0.0
+[node name="cutscene camera" type="Camera2D" parent="." unique_id=1417963057]

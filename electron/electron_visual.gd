@@ -28,8 +28,10 @@ func calc_vector():
 func _physics_process(_delta: float) -> void:
 	position = myVector.rotated(Globals.player.degrees/(ring+1))
 	visible = true
-	if(increment and Input.is_action_pressed("mouseleft")):
+	if(increment and Input.is_action_pressed("mouseleft") and ring == parent.ring_counts.size()-1):
 		if(bar.value < bar.max_value):
 			bar.value += INCREMENT_SPEED
+		else:
+			Globals.electron_steal(self)
 	elif(bar.value > bar.min_value):
 		bar.value -= INCREMENT_SPEED * 2

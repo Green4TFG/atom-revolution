@@ -1,22 +1,28 @@
 extends Node
 
+@onready var cutscene_camera: Camera2D = $"../cutscene camera"
+
 const RING_SIZE = 30
 const FIRST_RING = 40
 
 var player
 var rings = 0.0
 
-const ELECTRON_COUNTS = [[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
+const ELECTRON_COUNTS = [[2],[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
 
 
-var ELEMENT = 2 #1 is Helium, 5 is Radon
+var ELEMENT = 1 #1 is Helium, 5 is Radon
 var RING_COUNTS = ELECTRON_COUNTS[ELEMENT-1]
 var RING_SUMS = []
 
 func _ready() -> void:
 	for i in RING_COUNTS.size() :
 		RING_SUMS.append( RING_COUNTS.slice(0,i+1).reduce(sum,0))
-	
+
+func electron_steal(electron: electron_visual):
+	get_tree().paused = true
+	cutscene_camera.position = lerp(electron.position,player.position,0.5)
+	cutscene_camera.make_current()
 	
 func find_ring(electron_num: float,ring_array):
 	for i in ring_array.size() :

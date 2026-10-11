@@ -97,6 +97,7 @@ script = ExtResource("1_rkbax")
 
 [node name="face" type="AnimatedSprite2D" parent="." unique_id=1663520759]
 z_index = 50
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_17lfe")
 animation = &"serious"
 frame_progress = 0.4471833
