@@ -58,6 +58,7 @@ func add_nuclei():
 		var nuetron = NUETRON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.parent = self
+		rigidbody.texture = nuetron
 		rigidbody.add_child(nuetron)
 		rigidbody.position = Vector2(randf_range(-100,100),randf_range(-100,100))
 		nuetron.position = Vector2(0,0)
@@ -68,6 +69,7 @@ func add_nuclei():
 		var proton = PROTON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.parent = self
+		rigidbody.texture = proton
 		rigidbody.add_child(proton)
 		rigidbody.position = Vector2(randf_range(-50,50),randf_range(-50,50))
 		proton.position = Vector2(0,0)
