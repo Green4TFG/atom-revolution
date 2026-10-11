@@ -47,5 +47,11 @@ gravity_scale = 0.0
 position = Vector2(-434, 7)
 gravity_scale = 0.0
 
-[node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
-position = Vector2(-157, 202)
+[node name="enemy2" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
+position = Vector2(-233, 231)
+gravity_scale = 0.0
+ring_counts = [2, 8, 18, 8]
+
+[node name="enemy" parent="." unique_id=897077428 instance=ExtResource("5_gjl0y")]
+position = Vector2(-133, 120)
+gravity_scale = 0.0

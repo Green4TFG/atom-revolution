@@ -71,9 +71,7 @@ func add_nuclei():
 	var nuetronNum = nuetrons[Globals.element()-1]
 	for i in range(nuetronNum/4):
 		var nuetron = NUETRON_VISUAL.instantiate();
-		nuetron.z_index = 1000
 		var rigidbody = NUCLEI.instantiate()
-		rigidbody.z_index = randf_range(0,4);
 		rigidbody.add_child(nuetron)
 		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
 		nuetron.position = Vector2(0,0)
@@ -83,7 +81,6 @@ func add_nuclei():
 	for i in range(protonNum/4):
 		var proton = PROTON_VISUAL.instantiate();
 		var rigidbody = NUCLEI.instantiate()
-		rigidbody.z_index = randf_range(0,4);
 		rigidbody.add_child(proton)
 		rigidbody.position = Vector2(randf_range(-10,10),randf_range(-10,10))
 		proton.position = Vector2(0,0)
