@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://ccf0llgqgury1" path="res://electron/electron.gd" id="1_7yt30"]
 [ext_resource type="Texture2D" uid="uid://cy1sfpi4xedu4" path="res://assets/SketchElectron.png" id="2_yh841"]
+[ext_resource type="Shader" uid="uid://c73e83bryp26q" path="res://electron/electron_visual.gdshader" id="3_gd4d3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
 radius = 7.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
+shader = ExtResource("3_gd4d3")
+shader_parameter/thick = 2.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kva35"]
 radius = 13.0
@@ -19,7 +24,13 @@ script = ExtResource("1_7yt30")
 shape = SubResource("CircleShape2D_ri1ak")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=745756722]
+z_index = 1
 scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_yh841")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1266214336]
+z_index = -1
+material = SubResource("ShaderMaterial_17lfe")
 texture = ExtResource("2_yh841")
 
 [node name="pickup_range" type="Area2D" parent="." unique_id=1441171973]
