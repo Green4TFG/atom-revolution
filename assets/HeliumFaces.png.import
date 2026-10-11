@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2gp54xybxd6h"
-path="res://.godot/imported/HeliumFace.png-8f5b1ce82455fefabe9f0458afa1a9b7.ctex"
+uid="uid://dgyt2r7ew618g"
+path="res://.godot/imported/HeliumFaces.png-28dad178ff821310ccc8dc5e5d42bb91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HeliumFace.png"
-dest_files=["res://.godot/imported/HeliumFace.png-8f5b1ce82455fefabe9f0458afa1a9b7.ctex"]
+source_file="res://assets/HeliumFaces.png"
+dest_files=["res://.godot/imported/HeliumFaces.png-28dad178ff821310ccc8dc5e5d42bb91.ctex"]
 
 [params]
 

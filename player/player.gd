@@ -21,6 +21,7 @@ const ELECTRON_VISUAL = preload("uid://bgah8wptarpd")
 var electrons = []
 var electron_num = 0.0
 var degrees = 0.0
+var collecting_electron = false
 
 const NUCLEI = preload("uid://xv7ycaa57amx")
 const PROTON_VISUAL = preload("uid://c8pb1unl7wj75")
@@ -57,6 +58,7 @@ func _physics_process(delta: float) -> void:
 
 func add_electron():
 	electron_num+=1
+	collecting_electron = true
 	Globals.rings = Globals.find_ring(electron_num, Globals.RING_SUMS)
 	var electron = ELECTRON_VISUAL.instantiate()
 	electron.parent = self
@@ -70,8 +72,13 @@ func add_electron():
 	
 	electrons.append(electron)
 	electron.visible = false
+	collecting_electron = false
 	electron_folder.call_deferred("add_child", electron)
 	update_electrons()
+	face.play("happy")
+	await get_tree().create_timer(1.5).timeout
+	if(!collecting_electron):
+		face.play("idle")
 
 func update_electrons():
 	for child in electron_folder.get_children():
