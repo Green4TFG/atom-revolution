@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgah8wptarpd"]
 
 [ext_resource type="Script" uid="uid://dfp2by5xxtrrr" path="res://electron/electron_visual.gd" id="2_cxh5r"]
+[ext_resource type="Texture2D" uid="uid://cyh0l340bdamt" path="res://assets/ElectronProgressRing.png" id="3_o44oq"]
 [ext_resource type="Shader" uid="uid://c73e83bryp26q" path="res://electron/electron_visual.gdshader" id="3_ti3ud"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cxh5r"]
@@ -32,3 +33,18 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1870486098]
 shape = SubResource("CircleShape2D_kva35")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1200597627]
+anchors_preset = -1
+anchor_left = 0.0050000004
+anchor_top = 0.395
+anchor_right = 0.0050000004
+anchor_bottom = 0.395
+offset_left = -48.48
+offset_top = -85.92
+offset_right = 47.52
+offset_bottom = 10.079998
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 5
+texture_progress = ExtResource("3_o44oq")

@@ -3,8 +3,8 @@ extends CharacterBody2D
 @onready var electron_folder: Node2D = $"electron folder"
 @onready var nuclei_folder: Node2D = $"nuclei folder"
 @onready var camera: Camera2D = $Camera2D
-@onready var electron_pickup: RayCast2D = $RayCast2D
 @onready var face: AnimatedSprite2D = $face
+@onready var electron_pickup: Area2D = $electronPickup
 
 
 const ZOOM_RATIOS = [2,1.5,1.2,1,0.8,0.5,0.3,0.2]
@@ -51,8 +51,7 @@ func _physics_process(delta: float) -> void:
 	degrees +=  ROT_SPEED * delta
 	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)),ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)))
 	
-	electron_pickup.target_position.x = (Globals.rings+2) * Globals.RING_SIZE + Globals.FIRST_RING
-	electron_pickup.look_at(get_global_mouse_position())
+	electron_pickup.scale = Vector2(Globals.rings+1,Globals.rings+1)
 	
 	move_and_slide()
 
