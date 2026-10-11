@@ -9,15 +9,17 @@ shader = ExtResource("2_v4ci0")
 shader_parameter/thick = 2.0
 
 [node name="ProtonVisual" type="Sprite2D" unique_id=1910938141]
-z_index = 2
+z_index = 1
 texture = ExtResource("1_v4ci0")
 
 [node name="body" type="Sprite2D" parent="." unique_id=1664901105]
 show_behind_parent = true
+z_index = -2
 texture = ExtResource("3_cxx4k")
 
 [node name="outline" type="Sprite2D" parent="." unique_id=1366804391]
 show_behind_parent = true
 z_index = -5
+z_as_relative = false
 material = SubResource("ShaderMaterial_cxx4k")
 texture = ExtResource("3_cxx4k")

@@ -3,5 +3,4 @@
 [ext_resource type="Texture2D" uid="uid://cemhw4devrp0a" path="res://assets/NeutronHighlight.png" id="1_448os"]
 
 [node name="NeutronHighlight" type="Sprite2D" unique_id=1595610692]
-z_index = 1
 texture = ExtResource("1_448os")
