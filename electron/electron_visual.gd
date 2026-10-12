@@ -36,5 +36,6 @@ func _physics_process(_delta: float) -> void:
 				bar.value += INCREMENT_SPEED
 			else:
 				Globals.electron_steal(self)
+				Globals.target = get_parent().get_parent()
 		elif(bar.value > bar.min_value):
 			bar.value -= INCREMENT_SPEED * 2

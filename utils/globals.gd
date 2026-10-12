@@ -7,6 +7,7 @@ const RING_SIZE = 30
 const FIRST_RING = 40
 
 var player
+var target
 var rings = 0.0
 
 const CUTSCENE = preload("uid://bhlww2nal8pd5")

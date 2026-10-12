@@ -30,6 +30,21 @@ func _ready() -> void:
 	
 	pivot.rotation = randf_range(0,2*PI)
 	
+	var face = Globals.player.find_child("face").duplicate()
+	player.add_child(face)
+	var nucle = Globals.player.find_child("nuclei folder").duplicate()
+	player.add_child(nucle)
+	var s = 2.0/Globals.ELEMENT
+	player.scale = Vector2(s,s)
+	face.play("serious")
+	
+	face = Globals.target.accface.duplicate()
+	enemy.add_child(face)
+	nucle = Globals.target.find_child("nuclei folder").duplicate()
+	enemy.add_child(nucle)
+	s = 3.0/Globals.target.element
+	enemy.scale = Vector2(s,s)
+	face.play("serious")
 	
 	play_cutscene()
 
