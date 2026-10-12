@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c4qugunscnbob"]
+
+[ext_resource type="Texture2D" uid="uid://boykc3imfowbn" path="res://assets/4.png" id="1_idfmy"]
+[ext_resource type="Texture2D" uid="uid://ol4grs8warv" path="res://assets/3.png" id="2_52wxc"]
+[ext_resource type="Texture2D" uid="uid://g870uv3rcjfo" path="res://assets/2.png" id="3_xdf8y"]
+[ext_resource type="Texture2D" uid="uid://egtmspob41mf" path="res://assets/1.png" id="4_pqxo6"]
+
+[node name="Parallax" type="Node2D" unique_id=571539524]
+z_index = -1000
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=739751314]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(640, 360)
+autoscroll = Vector2(-2, -2)
+repeat_times = 6
+
+[node name="4" type="Sprite2D" parent="Parallax2D4" unique_id=555420780]
+self_modulate = Color(0.8572199, 0.99999994, 0.98506683, 1)
+texture = ExtResource("1_idfmy")
+centered = false
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=2137847343]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(640, 360)
+autoscroll = Vector2(4, 4)
+repeat_times = 5
+
+[node name="3" type="Sprite2D" parent="Parallax2D3" unique_id=890730237]
+self_modulate = Color(0.973535, 0.9735351, 0.973535, 1)
+texture = ExtResource("2_52wxc")
+centered = false
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=761778335]
+scroll_scale = Vector2(0.3, 0.3)
+scroll_offset = Vector2(640, 360)
+repeat_size = Vector2(640, 360)
+autoscroll = Vector2(-6, -6)
+repeat_times = 4
+
+[node name="2" type="Sprite2D" parent="Parallax2D2" unique_id=572041504]
+self_modulate = Color(0.9779369, 0.97793704, 0.9779369, 1)
+texture = ExtResource("3_xdf8y")
+centered = false
+flip_h = true
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=666516897]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(640, 360)
+autoscroll = Vector2(7, 7)
+repeat_times = 4
+
+[node name="1" type="Sprite2D" parent="Parallax2D" unique_id=1726220414]
+self_modulate = Color(0.95815676, 0.95815676, 0.95815676, 1)
+texture = ExtResource("4_pqxo6")
+centered = false
+flip_h = true

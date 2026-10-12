@@ -5,6 +5,10 @@
 [ext_resource type="Shader" uid="uid://c73e83bryp26q" path="res://electron/electron_visual.gdshader" id="3_ti3ud"]
 [ext_resource type="Texture2D" uid="uid://bgcva2poio24j" path="res://assets/FinalizedElectron.png" id="4_b5kk5"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_idfmy"]
+shader = ExtResource("3_ti3ud")
+shader_parameter/thick = 2.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
 shader = ExtResource("3_ti3ud")
 shader_parameter/thick = 2.0
@@ -13,6 +17,7 @@ shader_parameter/thick = 2.0
 
 [node name="electron visual" type="Sprite2D" unique_id=1724217778]
 z_index = 1
+material = SubResource("ShaderMaterial_idfmy")
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_b5kk5")
 script = ExtResource("2_cxh5r")

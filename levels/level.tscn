@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://3md2ko84i7u"]
 
 [ext_resource type="PackedScene" uid="uid://dka45pj5mhaer" path="res://player/player.tscn" id="1_80vhd"]
-[ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="2_hjsbj"]
+[ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="4_safpt"]
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_gjl0y"]
 [ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://utils/globals.gd" id="5_safpt"]
 [ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="6_gjl0y"]
@@ -11,19 +11,14 @@
 [node name="globals" type="Node" parent="." unique_id=1738744007]
 script = ExtResource("5_safpt")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=1958089824]
-modulate = Color(1, 0, 1, 1)
-z_index = -3000
-position = Vector2(-10.000122, 61.99997)
-scale = Vector2(24.976563, 11.859376)
-texture = ExtResource("2_hjsbj")
-
 [node name="player" parent="." unique_id=65502379 instance=ExtResource("1_80vhd")]
 position = Vector2(-84, 289)
 
 [node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
 position = Vector2(491, 352)
 element = 5
+
+[node name="Parallax" parent="." unique_id=571539524 instance=ExtResource("4_safpt")]
 
 [node name="electrons" type="Node2D" parent="." unique_id=570372406]
 

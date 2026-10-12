@@ -97,7 +97,7 @@ shader = ExtResource("5_g6k8r")
 shader_parameter/thick = 1.5
 shader_parameter/frequency = 15.0
 shader_parameter/phase_speed = 12.0
-shader_parameter/line_color = Color(0.58431375, 0.8117647, 0.9843137, 0.78431374)
+shader_parameter/line_color = Color(3.3691526e-06, 0.7130143, 0.63660467, 0.60784316)
 
 [node name="player" type="CharacterBody2D" unique_id=65502379]
 collision_layer = 2
