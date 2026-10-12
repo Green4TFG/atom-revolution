@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)),ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)))
 	
 	electron_pickup.scale = Vector2(Globals.rings+1,Globals.rings+1)
-	electron_pickup.find_child("lineline").material.set_shader_parameter("thick", 2.0/(Globals.rings+1))
+	electron_pickup.find_child("lineline").material.set_shader_parameter("thick", 2.0/((Globals.rings+1)/1.4))
 	
 	move_and_slide()
 
