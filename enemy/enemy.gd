@@ -35,10 +35,9 @@ func update_electrons():
 	for child in electron_folder.get_children():
 		child.calc_vector()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if(face):
 		face.rotation = rotation * -1
-
 
 		
 func sum(accum, number):
