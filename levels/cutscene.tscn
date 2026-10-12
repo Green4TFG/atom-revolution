@@ -5,10 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://c8gdb7uamgo8q" path="res://assets/ElectronCollectionMeter.png" id="3_32h0i"]
 [ext_resource type="Texture2D" uid="uid://bgcva2poio24j" path="res://assets/FinalizedElectron.png" id="4_yildc"]
 [ext_resource type="Shader" uid="uid://c73e83bryp26q" path="res://electron/electron_visual.gdshader" id="5_y7chl"]
+[ext_resource type="Texture2D" uid="uid://dtv14vpk2qooc" path="res://assets/region.svg" id="6_up1nh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ri1ak"]
 shader = ExtResource("5_y7chl")
 shader_parameter/thick = 2.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ri1ak"]
+viewport_path = NodePath("SubViewport")
 
 [node name="cutscene" type="Node2D" unique_id=972101611]
 process_mode = 3
@@ -74,5 +78,17 @@ scale = Vector2(0.15820313, 0.026628245)
 texture = ExtResource("1_88rpd")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=989389464]
+transparent_bg = true
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewport" unique_id=1176426789]
+[node name="offset" type="Node2D" parent="SubViewport" unique_id=953035513]
+position = Vector2(256, 256)
+
+[node name="pivot" type="Node2D" parent="SubViewport/offset" unique_id=1687450767]
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/offset/pivot" unique_id=1176426789]
+position = Vector2(0, -10.5)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_up1nh")
+
+[node name="area" type="Sprite2D" parent="." unique_id=2096645250]
+texture = SubResource("ViewportTexture_ri1ak")

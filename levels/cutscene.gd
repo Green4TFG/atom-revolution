@@ -8,8 +8,10 @@ extends Node2D
 @onready var enemybar: TextureProgressBar = $enemybar
 @onready var camera: Camera2D = $Camera2D
 @onready var playerbar: TextureProgressBar = $playerbar
+@onready var pivot: Node2D = $SubViewport/offset/pivot
 
 const ROT_SPEED = 1
+const DEPLETE_SPEED = 10
 var setup = false
 
 func _ready() -> void:
@@ -65,4 +67,5 @@ func play_cutscene():
 func _physics_process(delta: float) -> void:
 	if(setup):
 		enemybar.value = 100 - playerbar.value
+		playerbar.value -= DEPLETE_SPEED * delta
 		pointer.rotation += ROT_SPEED * delta
