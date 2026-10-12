@@ -4,20 +4,18 @@
 [ext_resource type="Script" uid="uid://dfp2by5xxtrrr" path="res://electron/electron_visual.gd" id="1_tc4j1"]
 [ext_resource type="Texture2D" uid="uid://bihpaj73048fm" path="res://electron/EnemyElectron.png" id="2_3gfuq"]
 [ext_resource type="Shader" uid="uid://c73e83bryp26q" path="res://electron/electron_visual.gdshader" id="2_3gmtn"]
-[ext_resource type="Texture2D" uid="uid://c8gdb7uamgo8q" path="res://assets/ElectronCollectionMeter.png" id="3_ai7sl"]
+[ext_resource type="Texture2D" uid="uid://bgcva2poio24j" path="res://assets/FinalizedElectron.png" id="5_3gfuq"]
+[ext_resource type="Texture2D" uid="uid://es5k032u7hng" path="res://assets/SkillCheckDonut.png" id="6_gwgec"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5yw35"]
 shader = ExtResource("1_ai7sl")
 shader_parameter/thick = 2.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rifeo"]
 shader = ExtResource("2_3gmtn")
 shader_parameter/thick = 2.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ti3ud"]
-load_path = "res://.godot/imported/FinalizedElectron.png-e9e12837bf622b0d23fe2a75a21dc6eb.ctex"
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kva35"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ysw5"]
 
 [node name="electron visual" type="Sprite2D" unique_id=1724217778]
 z_index = 1
@@ -26,19 +24,19 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_3gfuq")
 script = ExtResource("1_tc4j1")
 
-[node name="outline" type="Sprite2D" parent="." unique_id=1291821897]
+[node name="outline" type="Sprite2D" parent="." unique_id=673606420]
 z_index = -1
-material = SubResource("ShaderMaterial_17lfe")
-texture = SubResource("CompressedTexture2D_ti3ud")
+material = SubResource("ShaderMaterial_rifeo")
+texture = ExtResource("5_3gfuq")
 
-[node name="hitbox" type="Area2D" parent="." unique_id=542498412]
+[node name="hitbox" type="Area2D" parent="." unique_id=1228190183]
 collision_layer = 16
 collision_mask = 16
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1870486098]
-shape = SubResource("CircleShape2D_kva35")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1407219307]
+shape = SubResource("CircleShape2D_8ysw5")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1200597627]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=939320436]
 anchors_preset = -1
 anchor_left = 0.0050000004
 anchor_top = 0.395
@@ -51,7 +49,8 @@ offset_bottom = 10.079998
 grow_horizontal = 2
 grow_vertical = 2
 fill_mode = 5
-texture_progress = ExtResource("3_ai7sl")
+texture_progress = ExtResource("6_gwgec")
+metadata/_edit_use_anchors_ = true
 
-[node name="camera" type="Camera2D" parent="." unique_id=1982618728]
+[node name="camera" type="Camera2D" parent="." unique_id=1923387913]
 zoom = Vector2(6, 6)
