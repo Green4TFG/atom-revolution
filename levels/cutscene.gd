@@ -31,8 +31,8 @@ func play_cutscene():
 	player_slide.tween_property(player, "position", Vector2(85,0), 0.4)
 	
 	var name_slide = create_tween()
-	name_slide.set_trans(Tween.TRANS_EXPO)
-	name_slide.set_ease(Tween.EASE_IN)
-	name_slide.tween_interval(0.02)
-	player_slide.tween_property(qte_name, "position", Vector2(0,-35), 0.2)
+	name_slide.set_trans(Tween.TRANS_CUBIC)
+	name_slide.set_ease(Tween.EASE_OUT)
+	name_slide.tween_interval(0.1)
+	name_slide.tween_property(qte_name, "position", Vector2(0,-35), 0.2)
 	
