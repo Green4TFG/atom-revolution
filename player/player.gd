@@ -6,7 +6,6 @@ extends CharacterBody2D
 @onready var face: AnimatedSprite2D = $face
 @onready var electron_pickup: Area2D = $electronPickup
 
-
 const ZOOM_RATIOS = [2,1.5,1.2,1,0.8,0.5,0.3,0.2]
 
 const PULL_FORCE = 10000

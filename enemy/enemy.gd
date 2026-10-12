@@ -32,6 +32,8 @@ func _ready() -> void:
 		ring_sums.append( ring_counts.slice(0,i+1).reduce(sum,0))
 	add_nuclei()
 	total_electrons = ring_counts.reduce(sum, 0)
+	var s = 1+element/5.0+3
+	hitty.scale = Vector2(s,s)
 	add_electrons()
 	updateFace()
 	accface.play("idle")
