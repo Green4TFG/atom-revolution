@@ -66,10 +66,13 @@ metadata/_edit_use_anchors_ = true
 zoom = Vector2(6, 6)
 
 [node name="pointer" type="Node2D" parent="." unique_id=1938039990]
-rotation = -6.2831855
 
 [node name="texture" type="Sprite2D" parent="pointer" unique_id=792060141]
 z_index = 2
 position = Vector2(10, 2.9802322e-08)
 scale = Vector2(0.15820313, 0.026628245)
 texture = ExtResource("1_88rpd")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=989389464]
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport" unique_id=1176426789]

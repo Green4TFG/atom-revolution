@@ -9,7 +9,7 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var playerbar: TextureProgressBar = $playerbar
 
-const ROT_SPEED = 10
+const ROT_SPEED = 1
 var setup = false
 
 func _ready() -> void:
@@ -60,7 +60,6 @@ func play_cutscene():
 	pointer_tween.tween_property(pointer, "position", Vector2(0,0),0.3)
 	
 	await pointer_tween.finished
-	
 	setup = true
 	
 func _physics_process(delta: float) -> void:
