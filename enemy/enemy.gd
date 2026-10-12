@@ -68,7 +68,7 @@ func add_nuclei():
 		rigidbody.add_child(nuetron)
 		rigidbody.add_child(highlight)
 		rigidbody.position = Vector2(randf_range(-100,100),randf_range(-100,100))
-		rigidbody.z_index = randf_range(0,4)*3
+		rigidbody.z_index = randf_range(0,4)*9
 		nuetron.position = Vector2(0,0)
 		nuetron.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
@@ -84,7 +84,7 @@ func add_nuclei():
 		rigidbody.add_child(proton)
 		rigidbody.add_child(highlight)
 		rigidbody.position = Vector2(randf_range(-50,50),randf_range(-50,50))
-		rigidbody.z_index = randf_range(0,4)*3
+		rigidbody.z_index = randf_range(0,4)*9
 		proton.position = Vector2(0,0)
 		proton.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
