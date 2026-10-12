@@ -42,7 +42,6 @@ offset_bottom = 10.079998
 grow_horizontal = 2
 grow_vertical = 2
 fill_mode = 5
-texture_under = ExtResource("3_o44oq")
 texture_progress = ExtResource("3_o44oq")
 metadata/_edit_use_anchors_ = true
 
