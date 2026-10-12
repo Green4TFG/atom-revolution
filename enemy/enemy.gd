@@ -7,7 +7,7 @@ const PROTON_VISUAL = preload("uid://bbahsh0xterpj")
 const PROTON_HIGHLIGHT = preload("uid://bix13vm3ig6i1")
 const NUETRON_VISUAL = preload("uid://dwu041pyklb1c")
 const NUETRON_HIGHLIGHT = preload("uid://bxvabi25fcng")
-const NUCLEI = preload("uid://xv7ycaa57amx")
+const NUCLEI = preload("res://player/nuclei.tscn")
 @onready var nuclei_folder: Node2D = $"nuclei folder"
 
 const electrons = [[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
@@ -68,7 +68,7 @@ func add_nuclei():
 		rigidbody.add_child(nuetron)
 		rigidbody.add_child(highlight)
 		rigidbody.position = Vector2(randf_range(-100,100),randf_range(-100,100))
-		rigidbody.z_index = randf_range(0,4)*4
+		rigidbody.z_index = randf_range(0,4)*3
 		nuetron.position = Vector2(0,0)
 		nuetron.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
@@ -84,7 +84,7 @@ func add_nuclei():
 		rigidbody.add_child(proton)
 		rigidbody.add_child(highlight)
 		rigidbody.position = Vector2(randf_range(-50,50),randf_range(-50,50))
-		rigidbody.z_index = randf_range(0,4)*4
+		rigidbody.z_index = randf_range(0,4)*3
 		proton.position = Vector2(0,0)
 		proton.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
