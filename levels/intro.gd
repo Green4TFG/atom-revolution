@@ -35,5 +35,13 @@ func _ready() -> void:
 	
 	level.visible = true
 	get_tree().paused = false
+func _process(delta: float) -> void:
+	if(Input.is_action_just_pressed("mouseleft")):
+		visible = false
+		
+		Globals.player_camera.make_current()
+		
+		level.visible = true
+		get_tree().paused = false
 	
 	

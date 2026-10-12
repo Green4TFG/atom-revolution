@@ -12,6 +12,15 @@
 process_mode = 3
 script = ExtResource("1_30w35")
 
+[node name="Label" type="Label" parent="intro" unique_id=1573529745]
+modulate = Color(0, 0, 0, 1)
+z_index = 10
+offset_left = 429.0
+offset_top = 296.0
+offset_right = 572.0
+offset_bottom = 319.0
+text = "Left mouse to skip"
+
 [node name="ColorRect" type="ColorRect" parent="intro" unique_id=971004524]
 offset_left = -1647.0
 offset_top = -732.0
