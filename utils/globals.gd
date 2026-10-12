@@ -27,6 +27,7 @@ func electron_steal(electron: electron_visual):
 	CameraTransition.transition(player_camera, electron.camera)
 	await CameraTransition.tween.finished
 	var cutscene = CUTSCENE.instantiate()
+	cutscene.electron_parent = electron.get_parent().get_parent()
 	add_sibling(cutscene)
 	cutscene.z_index = 100
 
