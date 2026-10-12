@@ -48,3 +48,6 @@ grow_horizontal = 2
 grow_vertical = 2
 fill_mode = 5
 texture_progress = ExtResource("3_o44oq")
+
+[node name="camera" type="Camera2D" parent="." unique_id=1982618728]
+zoom = Vector2(6, 6)

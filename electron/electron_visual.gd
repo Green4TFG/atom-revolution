@@ -2,6 +2,7 @@ class_name electron_visual
 
 extends Sprite2D
 
+@onready var camera: Camera2D = $camera
 @onready var hitbox: Area2D = $hitbox
 @onready var bar: TextureProgressBar = $TextureProgressBar
 
@@ -26,6 +27,7 @@ func calc_vector():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
+	rotation = parent.rotation * -1
 	position = myVector.rotated(Globals.player.degrees/(ring+1))
 	visible = true
 	if(increment and Input.is_action_pressed("mouseleft") and ring == parent.ring_counts.size()-1):

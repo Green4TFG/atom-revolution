@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_gjl0y"]
 [ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://utils/globals.gd" id="5_safpt"]
 [ext_resource type="Script" uid="uid://dojk3wbcym8fd" path="res://levels/cutscene_camera.gd" id="5_vnv7o"]
+[ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="6_gjl0y"]
 
 [node name="level" type="Node2D" unique_id=647459510]
 
@@ -22,8 +23,58 @@ texture = ExtResource("2_hjsbj")
 position = Vector2(-84, 289)
 
 [node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
-position = Vector2(196, 309)
+position = Vector2(491, 352)
 
 [node name="cutscene camera" type="Camera2D" parent="." unique_id=1417963057]
 position = Vector2(824, 679)
 script = ExtResource("5_vnv7o")
+
+[node name="electrons" type="Node2D" parent="." unique_id=570372406]
+
+[node name="electron" parent="electrons" unique_id=1411004449 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron2" parent="electrons" unique_id=185195180 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron3" parent="electrons" unique_id=917538213 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron4" parent="electrons" unique_id=342276172 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron5" parent="electrons" unique_id=1671866323 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron6" parent="electrons" unique_id=726325479 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron7" parent="electrons" unique_id=153021451 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron8" parent="electrons" unique_id=1194645786 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron9" parent="electrons" unique_id=2127270706 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron10" parent="electrons" unique_id=234364634 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron11" parent="electrons" unique_id=158718451 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron12" parent="electrons" unique_id=1229502933 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron13" parent="electrons" unique_id=2000119821 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron14" parent="electrons" unique_id=253357187 instance=ExtResource("6_gjl0y")]
+position = Vector2(-494, 326)
+
+[node name="electron15" parent="electrons" unique_id=1343363260 instance=ExtResource("6_gjl0y")]
+position = Vector2(-205, 290)
+
+[node name="electron16" parent="electrons" unique_id=449522518 instance=ExtResource("6_gjl0y")]
+position = Vector2(-205, 290)

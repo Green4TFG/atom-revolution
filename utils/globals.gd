@@ -22,9 +22,9 @@ func _ready() -> void:
 
 func electron_steal(electron: electron_visual):
 	get_tree().paused = true
-	
-	CameraTransition.transition(player_camera, cutscene_camera)
-	
+	CameraTransition.transition(player_camera, electron.camera)
+
+
 func find_ring(electron_num: float,ring_array):
 	for i in ring_array.size() :
 		if(electron_num - ring_array[i] < 1):
