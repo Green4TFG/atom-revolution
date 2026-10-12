@@ -1,48 +1,54 @@
 [gd_scene format=3 uid="uid://bhlww2nal8pd5"]
 
 [ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="1_88rpd"]
+[ext_resource type="Script" uid="uid://qik85ttd2p5w" path="res://levels/cutscene.gd" id="1_um55k"]
 
 [node name="cutscene" type="Node2D" unique_id=972101611]
+script = ExtResource("1_um55k")
 
 [node name="enemy" type="Sprite2D" parent="." unique_id=1693119933]
-position = Vector2(-519, -81.00001)
-scale = Vector2(2.2421875, 2.296875)
+position = Vector2(-83.4, -0.39999962)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_88rpd")
 
 [node name="player" type="Sprite2D" parent="." unique_id=1857353741]
-position = Vector2(533.75, -70.74999)
-scale = Vector2(2.0117188, 2.1523438)
+position = Vector2(83.6, -0.39999956)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_88rpd")
 
 [node name="qte name" type="Sprite2D" parent="." unique_id=535979301]
-position = Vector2(-2.9999995, -232.00002)
-scale = Vector2(3.1953125, 0.8085938)
+position = Vector2(-4.7683716e-07, -35)
+scale = Vector2(0.56005853, 0.14172632)
 texture = ExtResource("1_88rpd")
 
 [node name="ring" type="Sprite2D" parent="." unique_id=2051757196]
-position = Vector2(-3.0000038, -46.999996)
-scale = Vector2(1.4570313, 1.2499999)
+position = Vector2(-0.34375095, -0.69479394)
+scale = Vector2(0.24462889, 0.22351883)
 texture = ExtResource("1_88rpd")
 
 [node name="pointer" type="Sprite2D" parent="." unique_id=792060141]
-position = Vector2(51.5, -31.5)
-scale = Vector2(0.7890625, 0.1328125)
+position = Vector2(11.000002, 0.2499994)
+scale = Vector2(0.15820313, 0.026628245)
 texture = ExtResource("1_88rpd")
 
 [node name="enemybar" type="TextureProgressBar" parent="." unique_id=1063694719]
-offset_left = -303.0
-offset_top = 106.0
-offset_right = 2.0
-offset_bottom = 234.0
+offset_left = 1.175003
+offset_top = 25.000002
+offset_right = 306.175
+offset_bottom = 153.0
+scale = Vector2(-0.135, 0.135)
 texture_under = ExtResource("1_88rpd")
 metadata/_edit_use_anchors_ = true
 
 [node name="playerbar" type="TextureProgressBar" parent="." unique_id=704112138]
-offset_top = 105.0
-offset_right = 327.0
-offset_bottom = 233.0
+offset_left = 1.1750069
+offset_top = 25.0
+offset_right = 328.17502
+offset_bottom = 153.0
+scale = Vector2(0.135, 0.135)
 texture_under = ExtResource("1_88rpd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1138691102]
 position = Vector2(0, 3)
+zoom = Vector2(6, 6)

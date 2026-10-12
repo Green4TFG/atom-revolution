@@ -35,6 +35,7 @@ var ring_counts = Globals.RING_COUNTS
 var ring_size = Globals.RING_SIZE
 
 func _ready() -> void:
+	electron_pickup.get_child(0).shape.radius = ((Globals.rings+1) * ring_size) + Globals.FIRST_RING + 20
 	Globals.player = self
 	face.play("idle")
 	add_nuclei()

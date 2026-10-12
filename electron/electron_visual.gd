@@ -30,7 +30,7 @@ func _physics_process(_delta: float) -> void:
 	rotation = parent.rotation * -1
 	position = myVector.rotated(Globals.player.degrees/(ring+1))
 	visible = true
-	if(increment and Input.is_action_pressed("mouseleft") and ring == parent.ring_counts.size()-1):
+	if(increment and Input.is_action_pressed("mouseleft") and ring == parent.ring_counts.size()-1) and global_position.distance_to(Globals.player.global_position) > (Globals.player.electron_pickup.get_child(0).shape.radius - 30):
 		if(bar.value < bar.max_value):
 			bar.value += INCREMENT_SPEED
 		else:

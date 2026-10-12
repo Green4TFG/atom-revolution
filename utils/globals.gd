@@ -12,7 +12,7 @@ var rings = 0.0
 const ELECTRON_COUNTS = [[2],[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
 
 
-var ELEMENT = 1 #1 is Helium, 5 is Radon
+var ELEMENT = 3 #1 is Helium, 5 is Radon
 var RING_COUNTS = ELECTRON_COUNTS[ELEMENT-1]
 var RING_SUMS = []
 
