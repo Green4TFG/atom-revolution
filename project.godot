@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Globals="*uid://d1yug7wcdo7lh"
+CameraTransition="*uid://b7sbqxwrtu4ac"
 
 [display]
 

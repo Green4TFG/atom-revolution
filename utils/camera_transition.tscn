@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://b7sbqxwrtu4ac"]
 
+[ext_resource type="Script" uid="uid://dw2hk0wcio05g" path="res://utils/camera_transition.gd" id="1_ereko"]
+
 [node name="CameraTransition" type="Node" unique_id=604224551]
+process_mode = 3
+script = ExtResource("1_ereko")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=100976287]

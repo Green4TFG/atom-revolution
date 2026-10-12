@@ -1,7 +1,8 @@
 extends Node
 
-@onready var cutscene_camera: Camera2D = $"../cutscene camera"
 
+var player_camera = null
+var cutscene_camera = null
 const RING_SIZE = 30
 const FIRST_RING = 40
 
@@ -21,8 +22,8 @@ func _ready() -> void:
 
 func electron_steal(electron: electron_visual):
 	get_tree().paused = true
-	cutscene_camera.position = lerp(electron.position,player.position,0.5)
-	cutscene_camera.make_current()
+	
+	CameraTransition.transition(player_camera, cutscene_camera)
 	
 func find_ring(electron_num: float,ring_array):
 	for i in ring_array.size() :
