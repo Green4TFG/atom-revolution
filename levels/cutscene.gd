@@ -10,9 +10,10 @@ extends Node2D
 @onready var playerbar: TextureProgressBar = $playerbar
 @onready var pivot: Node2D = $SubViewport/offset/pivot
 
-const ROT_SPEED = 1
-const DEPLETE_SPEED = 50
+const ROT_SPEED = 3.0
+const DEPLETE_SPEED = 5.0
 var setup = false
+var electron_parent = null
 
 func _ready() -> void:
 	camera.make_current()
@@ -69,7 +70,7 @@ func play_cutscene():
 func _physics_process(delta: float) -> void:
 	if(setup):
 		enemybar.value = enemybar.max_value - playerbar.value
-		playerbar.value -= DEPLETE_SPEED * delta
+		playerbar.value -= (DEPLETE_SPEED * electron_parent.element) * delta
 		pointer.rotation += ROT_SPEED * delta
 	if(Input.is_action_just_pressed("mouseleft")):
 		if(abs(fmod(pointer.rotation,2*PI) - pivot.rotation)) < 0.25*PI:
