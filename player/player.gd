@@ -52,8 +52,8 @@ func _physics_process(delta: float) -> void:
 	
 	degrees +=  ROT_SPEED * delta
 	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)),ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)))
-	
-	electron_pickup.scale = Vector2(Globals.rings+1,Globals.rings+1)
+	var s = ((Globals.rings + 1) * 0.65 ) + ((3.0 / 1.41) - 0.65 * 2.55)
+	electron_pickup.scale = Vector2(s,s)
 	electron_pickup.find_child("lineline").material.set_shader_parameter("thick", 2.0/((Globals.rings+1)/1.4))
 	
 	move_and_slide()
