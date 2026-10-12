@@ -1,9 +1,12 @@
 extends RigidBody2D
 
-const ELECTRON_VISUAL = preload("uid://bgah8wptarpd")
+const ELECTRON_VISUAL = preload("uid://ssa1garmbx45")
+
 @onready var electron_folder: Node2D = $"electron folder"
-const PROTON_VISUAL = preload("uid://c8pb1unl7wj75")
-const NUETRON_VISUAL = preload("uid://dh7o14qbgck7t")
+const PROTON_VISUAL = preload("uid://bbahsh0xterpj")
+const PROTON_HIGHLIGHT = preload("uid://bix13vm3ig6i1")
+const NUETRON_VISUAL = preload("uid://dwu041pyklb1c")
+const NUETRON_HIGHLIGHT = preload("uid://bxvabi25fcng")
 const NUCLEI = preload("uid://xv7ycaa57amx")
 @onready var nuclei_folder: Node2D = $"nuclei folder"
 
@@ -53,24 +56,35 @@ func add_electrons():
 
 func add_nuclei():
 	#creates nuetrons
-	var neutronNum = nuetrons[element-1]
-	for i in range(neutronNum):
+	var nuetronNum = nuetrons[Globals.ELEMENT-1]
+	for i in range(nuetronNum):
 		var nuetron = NUETRON_VISUAL.instantiate();
+		var highlight = NUETRON_HIGHLIGHT.instantiate();
 		var rigidbody = NUCLEI.instantiate()
+		
 		rigidbody.parent = self
 		rigidbody.texture = nuetron
+		rigidbody.highlight = highlight
 		rigidbody.add_child(nuetron)
+		rigidbody.add_child(highlight)
 		rigidbody.position = Vector2(randf_range(-100,100),randf_range(-100,100))
+		rigidbody.z_index = randf_range(0,4)*4
 		nuetron.position = Vector2(0,0)
+		nuetron.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
 	#creates protons
-	var protonNum = protons[element-1]
+	var protonNum = protons[Globals.ELEMENT-1]
 	for i in range(protonNum):
 		var proton = PROTON_VISUAL.instantiate();
+		var highlight = PROTON_HIGHLIGHT.instantiate();
 		var rigidbody = NUCLEI.instantiate()
 		rigidbody.parent = self
 		rigidbody.texture = proton
+		rigidbody.highlight = highlight
 		rigidbody.add_child(proton)
+		rigidbody.add_child(highlight)
 		rigidbody.position = Vector2(randf_range(-50,50),randf_range(-50,50))
+		rigidbody.z_index = randf_range(0,4)*4
 		proton.position = Vector2(0,0)
+		proton.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)

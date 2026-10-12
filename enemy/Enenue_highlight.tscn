@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxvabi25fcng"]
+
+[ext_resource type="Texture2D" uid="uid://dnfnsq81j3m57" path="res://assets/EnenueHighlight.png" id="1_6kdbr"]
+
+[node name="NeutronHighlight" type="Sprite2D" unique_id=1595610692]
+texture = ExtResource("1_6kdbr")

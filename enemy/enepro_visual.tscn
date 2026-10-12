@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bbahsh0xterpj"]
+
+[ext_resource type="Texture2D" uid="uid://drsv465y72drc" path="res://assets/EneproSymbol.png" id="1_8vunf"]
+[ext_resource type="Texture2D" uid="uid://c03i0jn7rvj7a" path="res://assets/EneproBase.png" id="2_5d3ga"]
+[ext_resource type="Shader" uid="uid://b2jtladmuq3do" path="res://enemy/enepro_visual.gdshader" id="3_c5p33"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxx4k"]
+shader = ExtResource("3_c5p33")
+shader_parameter/thick = 2.0
+
+[node name="ProtonVisual" type="Sprite2D" unique_id=1910938141]
+z_index = 1
+texture = ExtResource("1_8vunf")
+
+[node name="body" type="Sprite2D" parent="." unique_id=1664901105]
+show_behind_parent = true
+z_index = -2
+texture = ExtResource("2_5d3ga")
+
+[node name="outline" type="Sprite2D" parent="." unique_id=1366804391]
+show_behind_parent = true
+z_index = -5
+z_as_relative = false
+material = SubResource("ShaderMaterial_cxx4k")
+texture = ExtResource("2_5d3ga")

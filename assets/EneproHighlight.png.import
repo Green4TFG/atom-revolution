@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dao8o3yr21t3u"
-path="res://.godot/imported/2.png-f79589217c9a74fd0d3207c8643de526.ctex"
+uid="uid://dj6sd7sqcsnp8"
+path="res://.godot/imported/EneproHighlight.png-8412a93f660a8fd592149c75c3f6d843.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2.png"
-dest_files=["res://.godot/imported/2.png-f79589217c9a74fd0d3207c8643de526.ctex"]
+source_file="res://assets/EneproHighlight.png"
+dest_files=["res://.godot/imported/EneproHighlight.png-8412a93f660a8fd592149c75c3f6d843.ctex"]
 
 [params]
 

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dwu041pyklb1c"]
+
+[ext_resource type="Texture2D" uid="uid://csnyujdo8mfu3" path="res://assets/NeutronBase.png" id="1_je8l8"]
+[ext_resource type="Texture2D" uid="uid://dmm3gcm2vkkkj" path="res://assets/EnenueBase.png" id="1_q6s3l"]
+[ext_resource type="Shader" uid="uid://c6kwh730kcwpa" path="res://enemy/Enenue_visual.gdshader" id="2_febac"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
+shader = ExtResource("2_febac")
+shader_parameter/thick = 2.0
+
+[node name="NeutronVisual" type="Sprite2D" unique_id=2146740267]
+z_index = -1
+texture = ExtResource("1_q6s3l")
+
+[node name="outline" type="Sprite2D" parent="." unique_id=148197870]
+z_index = -5
+z_as_relative = false
+material = SubResource("ShaderMaterial_17lfe")
+texture = ExtResource("1_je8l8")
