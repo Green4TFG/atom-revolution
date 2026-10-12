@@ -3,6 +3,7 @@ extends Node
 @onready var camera2D: Camera2D = $Camera2D
 
 var transitioning: bool = false
+var tween = null
 
 
 func switch_camera(from, to) -> void:
@@ -24,7 +25,7 @@ func transition(from: Camera2D, to: Camera2D, duration: float = 1.0) -> void:
 	
 	transitioning = true
 	
-	var tween = create_tween()
+	tween = create_tween()
 	tween.set_parallel(true)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_CUBIC)
