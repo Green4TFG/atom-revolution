@@ -25,6 +25,8 @@ func _ready() -> void:
 	playerbar.value = 50
 	enemybar.value = 50
 	
+	pivot.rotation = randf_range(0,2*PI)
+	
 	
 	play_cutscene()
 
@@ -66,6 +68,13 @@ func play_cutscene():
 	
 func _physics_process(delta: float) -> void:
 	if(setup):
-		enemybar.value = 100 - playerbar.value
+		enemybar.value = enemybar.max_value - playerbar.value
 		playerbar.value -= DEPLETE_SPEED * delta
 		pointer.rotation += ROT_SPEED * delta
+	if(Input.is_action_just_pressed("mouseleft")):
+		print("pressed")
+		print(pointer.rotation,2*PI)
+		print(fmod(pointer.rotation,2*PI))
+		if(abs(fmod(pointer.rotation,2*PI) - pivot.rotation)) < 0.5*PI:
+			print("hit")
+			playerbar.value += 50

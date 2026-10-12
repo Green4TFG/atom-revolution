@@ -82,6 +82,7 @@ transparent_bg = true
 
 [node name="offset" type="Node2D" parent="SubViewport" unique_id=953035513]
 position = Vector2(256, 256)
+rotation = 1.5707964
 
 [node name="pivot" type="Node2D" parent="SubViewport/offset" unique_id=1687450767]
 
