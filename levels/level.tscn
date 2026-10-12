@@ -21,10 +21,6 @@ texture = ExtResource("2_hjsbj")
 [node name="player" parent="." unique_id=65502379 instance=ExtResource("1_80vhd")]
 position = Vector2(-84, 289)
 
-[node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
-position = Vector2(491, 352)
-element = 5
-
 [node name="electrons" type="Node2D" parent="." unique_id=570372406]
 
 [node name="electron" parent="electrons" unique_id=1411004449 instance=ExtResource("6_gjl0y")]
@@ -74,3 +70,7 @@ position = Vector2(-205, 290)
 
 [node name="electron16" parent="electrons" unique_id=449522518 instance=ExtResource("6_gjl0y")]
 position = Vector2(-205, 290)
+
+[node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
+position = Vector2(276, 319)
+element = 5

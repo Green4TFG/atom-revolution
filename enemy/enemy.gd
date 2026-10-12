@@ -1,6 +1,7 @@
 extends RigidBody2D
 
-const ELECTRON_VISUAL = preload("uid://ssa1garmbx45")
+const ELECTRON_VISUAL = preload("uid://bgah8wptarpd")
+
 @onready var electron_folder: Node2D = $"electron folder"
 const PROTON_VISUAL = preload("uid://bbahsh0xterpj")
 const PROTON_HIGHLIGHT = preload("uid://bix13vm3ig6i1")
