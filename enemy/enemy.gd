@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 const ELECTRON_VISUAL = preload("uid://ssa1garmbx45")
-
+@onready var face: AnimatedSprite2D = $face
 @onready var electron_folder: Node2D = $"electron folder"
 const PROTON_VISUAL = preload("uid://bbahsh0xterpj")
 const PROTON_HIGHLIGHT = preload("uid://bix13vm3ig6i1")
@@ -29,10 +29,16 @@ func _ready() -> void:
 	add_nuclei()
 	total_electrons = ring_counts.reduce(sum, 0)
 	add_electrons()
+	face.play("idle")
 
 func update_electrons():
 	for child in electron_folder.get_children():
 		child.calc_vector()
+
+func _physics_process(delta: float) -> void:
+	if(face):
+		face.rotation = rotation * -1
+
 
 		
 func sum(accum, number):
