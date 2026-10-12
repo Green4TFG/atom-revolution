@@ -4,11 +4,13 @@ extends Node2D
 @onready var player: Sprite2D = $player
 @onready var qte_name: Sprite2D = $"qte name"
 @onready var ring: Sprite2D = $ring
-@onready var pointer: Sprite2D = $pointer
+@onready var pointer: Node2D = $pointer
 @onready var enemybar: TextureProgressBar = $enemybar
 @onready var camera: Camera2D = $Camera2D
 @onready var playerbar: TextureProgressBar = $playerbar
 
+const ROT_SPEED = 10
+var setup = false
 
 func _ready() -> void:
 	camera.make_current()
@@ -17,7 +19,9 @@ func _ready() -> void:
 	qte_name.position = Vector2(0,-64)
 	playerbar.position = Vector2(100,25)
 	enemybar.position = Vector2(-100,25)
-	pointer.position = Vector2(10,64)
+	pointer.position = Vector2(0,64)
+	playerbar.value = 50
+	enemybar.value = 50
 	
 	
 	play_cutscene()
@@ -53,5 +57,13 @@ func play_cutscene():
 	var pointer_tween = create_tween()
 	pointer_tween.set_trans(Tween.TRANS_CUBIC)
 	pointer_tween.set_ease(Tween.EASE_OUT)
-	pointer_tween.tween_property(pointer, "position", Vector2(10,0),0.3)
+	pointer_tween.tween_property(pointer, "position", Vector2(0,0),0.3)
 	
+	await pointer_tween.finished
+	
+	setup = true
+	
+func _physics_process(delta: float) -> void:
+	if(setup):
+		enemybar.value = 100 - playerbar.value
+		pointer.rotation += ROT_SPEED * delta

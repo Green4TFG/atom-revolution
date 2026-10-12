@@ -42,12 +42,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_ri1ak")
 texture = ExtResource("4_yildc")
 
-[node name="pointer" type="Sprite2D" parent="." unique_id=792060141]
-z_index = 2
-position = Vector2(10, 2.9802322e-08)
-scale = Vector2(0.15820313, 0.026628245)
-texture = ExtResource("1_88rpd")
-
 [node name="enemybar" type="TextureProgressBar" parent="." unique_id=1063694719]
 offset_left = -101.0
 offset_top = 27.0
@@ -55,7 +49,7 @@ offset_right = 204.0
 offset_bottom = 155.0
 scale = Vector2(-0.135, 0.135)
 nine_patch_stretch = true
-texture_under = ExtResource("1_88rpd")
+texture_progress = ExtResource("1_88rpd")
 metadata/_edit_use_anchors_ = true
 
 [node name="playerbar" type="TextureProgressBar" parent="." unique_id=704112138]
@@ -65,8 +59,17 @@ offset_right = 426.0
 offset_bottom = 157.0
 scale = Vector2(0.135, 0.135)
 nine_patch_stretch = true
-texture_under = ExtResource("1_88rpd")
+texture_progress = ExtResource("1_88rpd")
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1138691102]
 zoom = Vector2(6, 6)
+
+[node name="pointer" type="Node2D" parent="." unique_id=1938039990]
+rotation = -6.2831855
+
+[node name="texture" type="Sprite2D" parent="pointer" unique_id=792060141]
+z_index = 2
+position = Vector2(10, 2.9802322e-08)
+scale = Vector2(0.15820313, 0.026628245)
+texture = ExtResource("1_88rpd")
