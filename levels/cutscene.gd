@@ -9,6 +9,7 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var playerbar: TextureProgressBar = $playerbar
 @onready var pivot: Node2D = $SubViewport/offset/pivot
+@onready var fade: ColorRect = $ColorRect
 
 const ROT_SPEED = 3.0
 const DEPLETE_SPEED = 5.0
@@ -16,6 +17,7 @@ var setup = false
 var electron_parent = null
 
 func _ready() -> void:
+	fade.color.a = 0
 	camera.make_current()
 	enemy.position = Vector2(-130,0)
 	player.position = Vector2(130,0)
@@ -33,6 +35,11 @@ func _ready() -> void:
 
 
 func play_cutscene():
+	var fade_tween = create_tween()
+	fade_tween.tween_property(fade, "color", Color(0.0, 0.0, 0.0, 1.0), 0.5)
+	
+	print("faded")
+	
 	var enemy_slide = create_tween()
 	enemy_slide.set_trans(Tween.TRANS_EXPO)
 	enemy_slide.set_ease(Tween.EASE_OUT)

@@ -243,7 +243,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ri1ak"]
-radius = 23.086792
+radius = 51.009804
 
 [node name="enemy" type="RigidBody2D" unique_id=276251561]
 collision_layer = 4

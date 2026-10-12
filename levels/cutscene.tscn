@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="1_88rpd"]
 [ext_resource type="Script" uid="uid://qik85ttd2p5w" path="res://levels/cutscene.gd" id="1_um55k"]
-[ext_resource type="Texture2D" uid="uid://c8gdb7uamgo8q" path="res://assets/ElectronCollectionMeter.png" id="3_32h0i"]
+[ext_resource type="Texture2D" uid="uid://es5k032u7hng" path="res://assets/SkillCheckDonut.png" id="3_up1nh"]
 [ext_resource type="Texture2D" uid="uid://bgcva2poio24j" path="res://assets/FinalizedElectron.png" id="4_yildc"]
 [ext_resource type="Shader" uid="uid://c73e83bryp26q" path="res://electron/electron_visual.gdshader" id="5_y7chl"]
 [ext_resource type="Texture2D" uid="uid://dtv14vpk2qooc" path="res://assets/region.svg" id="6_up1nh"]
@@ -18,7 +18,16 @@ viewport_path = NodePath("SubViewport")
 process_mode = 3
 script = ExtResource("1_um55k")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1348938535]
+offset_left = -121.0
+offset_top = -61.0
+offset_right = 117.0
+offset_bottom = 74.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
 [node name="enemy" type="Sprite2D" parent="." unique_id=1693119933]
+z_index = 1
 position = Vector2(-83.4, -0.39999962)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("1_88rpd")
@@ -35,7 +44,7 @@ texture = ExtResource("1_88rpd")
 
 [node name="ring" type="Sprite2D" parent="." unique_id=2051757196]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_32h0i")
+texture = ExtResource("3_up1nh")
 
 [node name="FinalizedElectron" type="Sprite2D" parent="." unique_id=717068366]
 z_index = 1

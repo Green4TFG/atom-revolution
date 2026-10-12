@@ -28,16 +28,17 @@ func _ready() -> void:
 	frame3_tween.tween_property(frame_3, "position", Vector2(0,20), 2)
 	
 	await frame3_tween.finished
-	
-	visible = false
-	
-	Globals.player_camera.make_current()
-	
-	level.visible = true
-	get_tree().paused = false
-func _process(delta: float) -> void:
-	if(Input.is_action_just_pressed("mouseleft")):
+	if(visible):
 		visible = false
+		
+		Globals.player_camera.make_current()
+		
+		level.visible = true
+		get_tree().paused = false
+func _process(_delta: float) -> void:
+	if(Input.is_action_just_pressed("mouseleft") and visible):
+		visible = false
+		
 		
 		Globals.player_camera.make_current()
 		
