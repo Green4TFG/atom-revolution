@@ -1,8 +1,39 @@
 [gd_scene format=3 uid="uid://bcmoe5je33k0b"]
 
+[ext_resource type="Script" uid="uid://dwdkei5cvskn6" path="res://levels/intro.gd" id="1_30w35"]
 [ext_resource type="PackedScene" uid="uid://3md2ko84i7u" path="res://levels/level.tscn" id="1_m637p"]
+[ext_resource type="Texture2D" uid="uid://6h7ucm36qejk" path="res://assets/Untitled_Artwork (2).png" id="2_cnc74"]
+[ext_resource type="Texture2D" uid="uid://cx3kc3llsriva" path="res://assets/Untitled_Artwork (1).png" id="3_vpik0"]
+[ext_resource type="Texture2D" uid="uid://cm1vnyruofelh" path="res://assets/Untitled_Artwork.png" id="4_arvxu"]
 
 [node name="Game" type="Node" unique_id=2111715477]
 
+[node name="intro" type="Node2D" parent="." unique_id=563622562]
+process_mode = 3
+script = ExtResource("1_30w35")
+
+[node name="ColorRect" type="ColorRect" parent="intro" unique_id=971004524]
+offset_left = -1647.0
+offset_top = -732.0
+offset_right = 1540.0
+offset_bottom = 1010.0
+
+[node name="frame1" type="Sprite2D" parent="intro" unique_id=1281085860]
+position = Vector2(-845, 44)
+scale = Vector2(0.59999996, 0.6)
+texture = ExtResource("2_cnc74")
+
+[node name="Camera2D" type="Camera2D" parent="intro" unique_id=214736914]
+
+[node name="frame2" type="Sprite2D" parent="intro" unique_id=1045015200]
+position = Vector2(803, 44)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_vpik0")
+
+[node name="frame3" type="Sprite2D" parent="intro" unique_id=1616807453]
+position = Vector2(0, 400)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_arvxu")
+
 [node name="level" parent="." unique_id=647459510 instance=ExtResource("1_m637p")]
-position = Vector2(111, -89)
+visible = false

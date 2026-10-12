@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://w7nckfjvp74f" path="res://assets/icon.svg" id="2_hjsbj"]
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_gjl0y"]
 [ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://utils/globals.gd" id="5_safpt"]
-[ext_resource type="Script" uid="uid://dojk3wbcym8fd" path="res://levels/cutscene_camera.gd" id="5_vnv7o"]
 [ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="6_gjl0y"]
 
 [node name="level" type="Node2D" unique_id=647459510]
@@ -25,10 +24,6 @@ position = Vector2(-84, 289)
 [node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
 position = Vector2(491, 352)
 element = 5
-
-[node name="cutscene camera" type="Camera2D" parent="." unique_id=1417963057]
-position = Vector2(824, 679)
-script = ExtResource("5_vnv7o")
 
 [node name="electrons" type="Node2D" parent="." unique_id=570372406]
 
