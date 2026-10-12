@@ -24,6 +24,7 @@ position = Vector2(-84, 289)
 
 [node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_gjl0y")]
 position = Vector2(491, 352)
+element = 5
 
 [node name="cutscene camera" type="Camera2D" parent="." unique_id=1417963057]
 position = Vector2(824, 679)

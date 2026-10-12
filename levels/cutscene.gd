@@ -11,7 +11,7 @@ extends Node2D
 @onready var pivot: Node2D = $SubViewport/offset/pivot
 
 const ROT_SPEED = 1
-const DEPLETE_SPEED = 10
+const DEPLETE_SPEED = 50
 var setup = false
 
 func _ready() -> void:
@@ -72,9 +72,8 @@ func _physics_process(delta: float) -> void:
 		playerbar.value -= DEPLETE_SPEED * delta
 		pointer.rotation += ROT_SPEED * delta
 	if(Input.is_action_just_pressed("mouseleft")):
-		print("pressed")
-		print(pointer.rotation,2*PI)
-		print(fmod(pointer.rotation,2*PI))
-		if(abs(fmod(pointer.rotation,2*PI) - pivot.rotation)) < 0.5*PI:
+		if(abs(fmod(pointer.rotation,2*PI) - pivot.rotation)) < 0.25*PI:
 			print("hit")
-			playerbar.value += 50
+			playerbar.value += 10
+		else:
+			playerbar.value -= 10

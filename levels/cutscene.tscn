@@ -82,12 +82,12 @@ transparent_bg = true
 
 [node name="offset" type="Node2D" parent="SubViewport" unique_id=953035513]
 position = Vector2(256, 256)
-rotation = 1.5707964
+rotation = 2.3561945
 
 [node name="pivot" type="Node2D" parent="SubViewport/offset" unique_id=1687450767]
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewport/offset/pivot" unique_id=1176426789]
-position = Vector2(0, -10.5)
+position = Vector2(-10.5, -10.5)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("6_up1nh")
 
