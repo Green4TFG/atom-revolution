@@ -9,6 +9,7 @@ const NUETRON_VISUAL = preload("uid://dwu041pyklb1c")
 const NUETRON_HIGHLIGHT = preload("uid://bxvabi25fcng")
 const NUCLEI = preload("res://player/nuclei.tscn")
 @onready var nuclei_folder: Node2D = $"nuclei folder"
+@onready var hitty: CollisionShape2D = $CollisionShape2D
 
 const electrons = [[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
 const protons = [2, 4, 6, 9, 21, 30]

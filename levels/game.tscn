@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bcmoe5je33k0b"]
 
 [ext_resource type="Script" uid="uid://dwdkei5cvskn6" path="res://levels/intro.gd" id="1_30w35"]
-[ext_resource type="PackedScene" uid="uid://3md2ko84i7u" path="res://levels/level.tscn" id="1_m637p"]
 [ext_resource type="Texture2D" uid="uid://6h7ucm36qejk" path="res://assets/Untitled_Artwork (2).png" id="2_cnc74"]
 [ext_resource type="Texture2D" uid="uid://cx3kc3llsriva" path="res://assets/Untitled_Artwork (1).png" id="3_vpik0"]
 [ext_resource type="Texture2D" uid="uid://cm1vnyruofelh" path="res://assets/Untitled_Artwork.png" id="4_arvxu"]
+[ext_resource type="PackedScene" uid="uid://qmfvh4vndwfy" path="res://mainmenu/main.tscn" id="5_30w35"]
+[ext_resource type="AudioStream" uid="uid://g0fxklnf8n87" path="res://music/mainmenu_intro.mp3" id="6_cnc74"]
 
 [node name="Game" type="Node" unique_id=2111715477]
 
@@ -13,7 +14,6 @@ process_mode = 3
 script = ExtResource("1_30w35")
 
 [node name="Label" type="Label" parent="intro" unique_id=1573529745]
-modulate = Color(0, 0, 0, 1)
 z_index = 10
 offset_left = 429.0
 offset_top = 296.0
@@ -26,6 +26,7 @@ offset_left = -1647.0
 offset_top = -732.0
 offset_right = 1540.0
 offset_bottom = 1010.0
+color = Color(0.32729906, 0.32729906, 0.32729903, 1)
 
 [node name="frame1" type="Sprite2D" parent="intro" unique_id=1281085860]
 position = Vector2(-845, 44)
@@ -44,5 +45,8 @@ position = Vector2(0, 400)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_arvxu")
 
-[node name="level" parent="." unique_id=647459510 instance=ExtResource("1_m637p")]
+[node name="Main" parent="." unique_id=543285711 instance=ExtResource("5_30w35")]
 visible = false
+
+[node name="a" type="AudioStreamPlayer" parent="." unique_id=356823093]
+stream = ExtResource("6_cnc74")

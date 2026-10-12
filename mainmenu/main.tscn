@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://qmfvh4vndwfy"]
+
+[ext_resource type="Script" uid="uid://cyq2rsuffchpr" path="res://mainmenu/main.gd" id="1_1l286"]
+[ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="1_u11kd"]
+
+[node name="Main" type="Node2D" unique_id=543285711]
+script = ExtResource("1_1l286")
+
+[node name="Parallax" parent="." unique_id=571539524 instance=ExtResource("1_u11kd")]
+position = Vector2(1, 0)
+
+[node name="Button" type="Button" parent="." unique_id=802538227]
+offset_left = 78.0
+offset_top = 124.0
+offset_right = 233.0
+offset_bottom = 243.0
+text = "LEVEL"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

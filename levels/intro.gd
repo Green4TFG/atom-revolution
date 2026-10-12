@@ -4,12 +4,13 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var frame_2: Sprite2D = $frame2
 @onready var frame_3: Sprite2D = $frame3
-@onready var level: Node2D = $"../level"
+@onready var level: Node2D = $"../Main"
 
 func _ready() -> void:
 	get_tree().paused = true
 	camera.make_current()
-	
+	$"../a".play()
+	frame_3.modulate = Color(100, 100, 100, 1) 
 	var frame1_tween = create_tween()
 	frame1_tween.set_trans(Tween.TRANS_EXPO)
 	frame1_tween.set_ease(Tween.EASE_OUT)
@@ -30,18 +31,11 @@ func _ready() -> void:
 	await frame3_tween.finished
 	if(visible):
 		visible = false
-		
-		Globals.player_camera.make_current()
-		
 		level.visible = true
 		get_tree().paused = false
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("mouseleft") and visible):
 		visible = false
-		
-		
-		Globals.player_camera.make_current()
-		
 		level.visible = true
 		get_tree().paused = false
 	

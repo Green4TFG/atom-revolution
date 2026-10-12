@@ -39,6 +39,8 @@ func _ready() -> void:
 	Globals.player = self
 	face.play("idle")
 	add_nuclei()
+	#COMMMENT THIS OUT COMMENT THIS OUT COMMEN THIS OUT I REPEAST COMMENT THIS OUT
+	Globals.player_camera.make_current()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
