@@ -1,12 +1,31 @@
 [gd_scene format=3 uid="uid://3md2ko84i7u"]
 
 [ext_resource type="PackedScene" uid="uid://dka45pj5mhaer" path="res://player/player.tscn" id="1_80vhd"]
+[ext_resource type="FontFile" uid="uid://cu1y4rt4mnsqi" path="res://assets/Impact.ttf" id="1_gjl0y"]
 [ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="4_safpt"]
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_gjl0y"]
 [ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://utils/globals.gd" id="5_safpt"]
 [ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="6_gjl0y"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_17lfe"]
+font = ExtResource("1_gjl0y")
+font_size = 30
+font_color = Color(0.69803923, 0.13725491, 0.4117647, 1)
+outline_size = 15
+outline_color = Color(0.8156863, 1, 0.9764706, 1)
+
 [node name="level" type="Node2D" unique_id=647459510]
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1892041068]
+
+[node name="Label" type="Label" parent="ui" unique_id=1838497556]
+offset_left = 1048.9999
+offset_top = 17.0
+offset_right = 1092.9999
+offset_bottom = 55.0
+scale = Vector2(1.8399951, 1.8399951)
+text = "100"
+label_settings = SubResource("LabelSettings_17lfe")
 
 [node name="globals" type="Node" parent="." unique_id=1738744007]
 script = ExtResource("5_safpt")

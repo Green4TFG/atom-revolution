@@ -9,7 +9,6 @@ extends Node2D
 func _ready() -> void:
 	get_tree().paused = true
 	camera.make_current()
-	$"../a".play()
 	frame_3.modulate = Color(100, 100, 100, 1) 
 	var frame1_tween = create_tween()
 	frame1_tween.set_trans(Tween.TRANS_EXPO)
@@ -19,13 +18,13 @@ func _ready() -> void:
 	var frame2_tween = create_tween()
 	frame2_tween.set_trans(Tween.TRANS_EXPO)
 	frame2_tween.set_ease(Tween.EASE_OUT)
-	frame2_tween.tween_interval(1.5)
+	frame2_tween.tween_interval(1)
 	frame2_tween.tween_property(frame_2, "position", Vector2(13,44), 1)
 	
 	var frame3_tween = create_tween()
 	frame3_tween.set_trans(Tween.TRANS_EXPO)
 	frame3_tween.set_ease(Tween.EASE_OUT)
-	frame3_tween.tween_interval(3)
+	frame3_tween.tween_interval(1.5)
 	frame3_tween.tween_property(frame_3, "position", Vector2(0,20), 2)
 	
 	await frame3_tween.finished
