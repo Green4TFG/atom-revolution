@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 const ELECTRON_VISUAL = preload("uid://ssa1garmbx45")
-@onready var face: AnimatedSprite2D = $face
 @onready var electron_folder: Node2D = $"electron folder"
 const PROTON_VISUAL = preload("uid://bbahsh0xterpj")
 const PROTON_HIGHLIGHT = preload("uid://bix13vm3ig6i1")
@@ -20,24 +19,42 @@ var total_electrons = ring_counts.reduce(sum, 0)
 var rings = 0
 var ring_sums = []
 
+@onready var face1: AnimatedSprite2D = $face1
+@onready var face3: AnimatedSprite2D = $face3
+@onready var face5: AnimatedSprite2D = $face5
+var accface: AnimatedSprite2D = null
 
 func _ready() -> void:
-	
 	ring_counts = electrons[element-1]
 	for i in ring_counts.size() :
 		ring_sums.append( ring_counts.slice(0,i+1).reduce(sum,0))
 	add_nuclei()
 	total_electrons = ring_counts.reduce(sum, 0)
 	add_electrons()
-	face.play("idle")
+	updateFace()
+	accface.play("idle")
+
+func updateFace():
+	face1.visible = false
+	face3.visible = false
+	face5.visible = false
+	if(element < 3):
+		accface = face1
+		face1.visible = true
+	elif(element < 5):
+		accface = face3
+		face3.visible = true
+	elif(element == 5):
+		accface = face5
+		face5.visible = true
 
 func update_electrons():
 	for child in electron_folder.get_children():
 		child.calc_vector()
 
 func _physics_process(_delta: float) -> void:
-	if(face):
-		face.rotation = rotation * -1
+	if(accface):
+		accface.rotation = rotation * -1
 
 		
 func sum(accum, number):
@@ -61,7 +78,7 @@ func add_electrons():
 
 func add_nuclei():
 	#creates nuetrons
-	var nuetronNum = nuetrons[Globals.ELEMENT-1]
+	var nuetronNum = nuetrons[element-1]
 	for i in range(nuetronNum):
 		var nuetron = NUETRON_VISUAL.instantiate();
 		var highlight = NUETRON_HIGHLIGHT.instantiate();
@@ -78,7 +95,7 @@ func add_nuclei():
 		nuetron.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
 	#creates protons
-	var protonNum = protons[Globals.ELEMENT-1]
+	var protonNum = protons[element-1]
 	for i in range(protonNum):
 		var proton = PROTON_VISUAL.instantiate();
 		var highlight = PROTON_HIGHLIGHT.instantiate();
