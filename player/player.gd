@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 	camera.zoom = Vector2(ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)),ZOOM_RATIOS[Globals.rings]/(1+(Globals.ELEMENT/5.0)))
 	
 	electron_pickup.scale = Vector2(Globals.rings+1,Globals.rings+1)
+	electron_pickup.find_child("lineline").material.set_shader_parameter("thick", 2.0/(Globals.rings+1))
 	
 	move_and_slide()
 
@@ -76,6 +77,7 @@ func add_electron():
 	collecting_electron = false
 	electron_folder.call_deferred("add_child", electron)
 	update_electrons()
+	
 	face.play("happy")
 	await get_tree().create_timer(1.5).timeout
 	if(!collecting_electron):

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://da88hnxjft5c7"]
+
+[ext_resource type="Shader" uid="uid://c5spin5npcga5" path="res://player/ring.gdshader" id="1_q0er0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_17lfe"]
+shader = ExtResource("1_q0er0")
+shader_parameter/thick = 2.0
+shader_parameter/frequency = 10.0
+shader_parameter/phase_speed = 5.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+
+[node name="Ring" type="Area2D" unique_id=1688971775]
+z_index = -10
+material = SubResource("ShaderMaterial_17lfe")
