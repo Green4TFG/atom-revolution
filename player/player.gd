@@ -39,7 +39,7 @@ func _ready() -> void:
 	face.play("idle")
 	add_nuclei()
 	#COMMMENT THIS OUT COMMENT THIS OUT COMMEN THIS OUT I REPEAST COMMENT THIS OUT
-	Globals.player_camera.make_current()
+	#Globals.player_camera.make_current()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -126,6 +126,12 @@ func add_nuclei():
 		proton.find_child("outline").z_index = -10
 		nuclei_folder.add_child(rigidbody)
 
+func lose_electron():
+	for i in electron_folder.get_children():
+		if(i.true_number == electron_num):
+			i.queue_free()
+			electron_num -= 1
+			Globals.rings = Globals.find_ring(electron_num, Globals.RING_SUMS)
 
 func _on_electron_pickup_area_entered(area: Area2D) -> void:
 	if(area.get_parent() is electron_visual):

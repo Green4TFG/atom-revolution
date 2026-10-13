@@ -18,6 +18,8 @@ const DEPLETE_SPEED = 0.7
 var setup = false
 var electron_parent = null
 
+signal finished
+
 func _ready() -> void:
 	fade.color.a = 0
 	fade.find_child("bg").modulate.a = 0
@@ -156,9 +158,17 @@ func _physics_process(delta: float) -> void:
 		enemybar.value = 0
 		playerbar.value = 100
 		setup = false
+		await get_tree().create_timer(1.0).timeout
+		finished.emit()
+		Globals.winner = "player"
+		queue_free()
 	elif(enemybar.value > 99):
 		plaface.play("panic")
 		eneface.play("happy")
 		enemybar.value = 100
 		playerbar.value = 0
 		setup = false
+		await get_tree().create_timer(1.0).timeout
+		finished.emit()
+		Globals.winner = "enemy"
+		queue_free()

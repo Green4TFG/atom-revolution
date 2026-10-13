@@ -10,6 +10,7 @@ var player
 var target
 var rings = 0.0
 var time = 90
+var winner = ""
 
 const CUTSCENE = preload("uid://bhlww2nal8pd5")
 
@@ -33,6 +34,16 @@ func electron_steal(electron: electron_visual):
 	cutscene.electron_parent = electron.get_parent().get_parent()
 	add_sibling(cutscene)
 	cutscene.z_index = 100
+	await cutscene.finished
+	get_tree().paused = false
+	if(winner == "player"):
+		player.add_electron()
+	elif(winner == "enemy"):
+		player.lose_electron()
+	get_tree().paused = true
+	CameraTransition.transition(electron.camera, player_camera)
+	get_tree().paused = false
+	
 
 
 func find_ring(electron_num: float,ring_array):
