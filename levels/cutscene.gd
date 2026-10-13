@@ -13,7 +13,7 @@ extends Node2D
 var eneface
 var plaface
 
-var ROT_SPEED = 2.0
+var ROT_SPEED = 4.0
 const DEPLETE_SPEED = 0.7
 var setup = false
 var electron_parent = null
@@ -21,6 +21,7 @@ var electron_parent = null
 signal finished
 
 func _ready() -> void:
+	ROT_SPEED = 4.0 * (Globals.ELEMENT/2.0)
 	fade.color.a = 0
 	fade.find_child("bg").modulate.a = 0
 	camera.make_current()
@@ -141,7 +142,6 @@ func _physics_process(delta: float) -> void:
 		pointer.rotation += ROT_SPEED * delta
 		if(Input.is_action_just_pressed("mouseleft")):
 			if(abs(angle_difference(pointer.rotation, pivot.rotation))) < 0.25*PI:
-				print("hit")
 				playerbar.value += 20 * (1-(abs(angle_difference(pointer.rotation, pivot.rotation)))*2.0)
 				ROT_SPEED += 0.3 * ((ROT_SPEED/abs(ROT_SPEED)) / (Globals.target.element/2))
 				ROT_SPEED *= -1
@@ -149,26 +149,27 @@ func _physics_process(delta: float) -> void:
 				tib.set_ease(Tween.EASE_IN_OUT)
 				tib.tween_property(pivot, "rotation", pivot.rotation+randf_range(-PI,PI), 0.1)
 			else:
-				print("hello")
 				playerbar.value -= 5
 				ROT_SPEED -= 0.05 * (ROT_SPEED/abs(ROT_SPEED))
-	if(playerbar.value > 99):
-		plaface.play("happy")
-		eneface.play("panic")
-		enemybar.value = 0
-		playerbar.value = 100
-		setup = false
-		await get_tree().create_timer(1.0).timeout
-		finished.emit()
-		Globals.winner = "player"
-		queue_free()
-	elif(enemybar.value > 99):
-		plaface.play("panic")
-		eneface.play("happy")
-		enemybar.value = 100
-		playerbar.value = 0
-		setup = false
-		await get_tree().create_timer(1.0).timeout
-		finished.emit()
-		Globals.winner = "enemy"
-		queue_free()
+		if(playerbar.value > 99):
+			setup = false
+			plaface.play("happy")
+			eneface.play("panic")
+			enemybar.value = 0
+			playerbar.value = 100
+			await get_tree().create_timer(1.0).timeout
+			Globals.winner = "player"
+			finished.emit()
+			
+			queue_free()
+		elif(enemybar.value > 99):
+			plaface.play("panic")
+			eneface.play("happy")
+			enemybar.value = 100
+			playerbar.value = 0
+			setup = false
+			await get_tree().create_timer(1.0).timeout
+			
+			Globals.winner = "enemy"
+			finished.emit()
+			queue_free()

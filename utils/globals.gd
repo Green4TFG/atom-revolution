@@ -35,10 +35,13 @@ func electron_steal(electron: electron_visual):
 	add_sibling(cutscene)
 	cutscene.z_index = 100
 	await cutscene.finished
+	print(winner)
 	get_tree().paused = false
 	if(winner == "player"):
+		print("yay")
 		player.add_electron()
 	elif(winner == "enemy"):
+		print("no")
 		player.lose_electron()
 	get_tree().paused = true
 	CameraTransition.transition(electron.camera, player_camera)
