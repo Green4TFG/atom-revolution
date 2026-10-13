@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_gjl0y"]
 [ext_resource type="Script" uid="uid://d1yug7wcdo7lh" path="res://utils/globals.gd" id="5_safpt"]
 [ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="6_gjl0y"]
+[ext_resource type="AudioStream" uid="uid://l2aligl0fhnq" path="res://music/helium_loop.mp3" id="7_d5x7l"]
+[ext_resource type="AudioStream" uid="uid://c3tmtaa6600r3" path="res://music/helium_intro.mp3" id="8_rtcij"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_17lfe"]
 font = ExtResource("1_gjl0y")
@@ -88,3 +90,10 @@ position = Vector2(-205, 290)
 
 [node name="electron16" parent="electrons" unique_id=449522518 instance=ExtResource("6_gjl0y")]
 position = Vector2(-205, 290)
+
+[node name="theme" type="AudioStreamPlayer" parent="." unique_id=1480282421]
+stream = ExtResource("7_d5x7l")
+parameters/looping = true
+
+[node name="intro" type="AudioStreamPlayer" parent="." unique_id=1389802846]
+stream = ExtResource("8_rtcij")

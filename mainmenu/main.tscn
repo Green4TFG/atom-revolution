@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyq2rsuffchpr" path="res://mainmenu/main.gd" id="1_1l286"]
 [ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="1_u11kd"]
+[ext_resource type="Texture2D" uid="uid://cr527bwbva7dv" path="res://assets/Logo_Revalence.png" id="3_rujrh"]
 
 [node name="Main" type="Node2D" unique_id=543285711]
 script = ExtResource("1_1l286")
@@ -10,10 +11,36 @@ script = ExtResource("1_1l286")
 position = Vector2(1, 0)
 
 [node name="Button" type="Button" parent="." unique_id=802538227]
-offset_left = 78.0
-offset_top = 124.0
-offset_right = 233.0
-offset_bottom = 243.0
-text = "LEVEL"
+offset_left = -271.0
+offset_top = 68.0
+offset_right = -116.0
+offset_bottom = 187.0
+text = "HELIUM
+BEGINNER
+"
+
+[node name="Button2" type="Button" parent="." unique_id=1242634448]
+offset_left = -75.0
+offset_top = 68.0
+offset_right = 80.0
+offset_bottom = 187.0
+text = "ARGON
+INTERMEDIATE
+"
+
+[node name="Button3" type="Button" parent="." unique_id=2009074267]
+offset_left = 135.0
+offset_top = 68.0
+offset_right = 290.0
+offset_bottom = 187.0
+text = "XENON
+EXPERT
+"
+
+[node name="title" type="Sprite2D" parent="." unique_id=246385066]
+position = Vector2(0, -194)
+texture = ExtResource("3_rujrh")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_pressed"]
