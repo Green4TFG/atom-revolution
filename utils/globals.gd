@@ -12,6 +12,8 @@ var rings = 0.0
 var time = 90
 var winner = ""
 
+signal win
+
 const CUTSCENE = preload("uid://bhlww2nal8pd5")
 
 const ELECTRON_COUNTS = [[2],[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
@@ -39,12 +41,22 @@ func electron_steal(electron: electron_visual):
 	get_tree().paused = false
 	if(winner == "player"):
 		print("yay")
-		player.add_electron()
-		electron.get_parent().get_parent().lose_electron()
+		if(!player.electron_num == player.max_electrons):
+			player.add_electron()
+		else:
+			win.emit()
+		if(!electron.get_parent().get_parent().total_electrons == 0):
+			electron.get_parent().get_parent().lose_electron()
+		else:
+			electron.get_parent().get_parent().queue_free()
 	elif(winner == "enemy"):
 		print("no")
-		player.lose_electron()
-		electron.get_parent().get_parent().add_electron()
+		if(!player.electron_num == 0):
+			player.lose_electron()
+		if(!electron.get_parent().get_parent().total_electrons == electron.get_parent().get_parent().max_electrons):
+			print(electron.get_parent().get_parent().total_electrons)
+			print(electron.get_parent().get_parent().max_electrons)
+			electron.get_parent().get_parent().add_electron()
 	get_tree().paused = true
 	CameraTransition.transition(electron.camera, player_camera)
 	get_tree().paused = false
