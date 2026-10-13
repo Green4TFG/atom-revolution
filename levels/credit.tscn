@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bncpftq8x8ocv"]
+
+[node name="Credit" type="AcceptDialog" unique_id=1359970312]
+title = "Credits"
+ok_button_text = "I see!"
+dialog_text = "Art Team
+3 cats in a trench coat, falsevanityyy, Llama
+Programming Team
+Green4TFG, Llama
+Music and SFX
+altieri, falsevanityyy "

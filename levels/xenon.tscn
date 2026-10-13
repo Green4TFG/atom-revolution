@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://okbnx0fn8rux"]
+
+[ext_resource type="AudioStream" uid="uid://l2aligl0fhnq" path="res://music/helium_loop.mp3" id="1_fl2j3"]
+[ext_resource type="AudioStream" uid="uid://c3tmtaa6600r3" path="res://music/helium_intro.mp3" id="2_2fjf8"]
+[ext_resource type="FontFile" uid="uid://cu1y4rt4mnsqi" path="res://assets/Impact.ttf" id="3_di205"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lfsbt"]
+font = ExtResource("3_di205")
+font_size = 30
+font_color = Color(0.69803923, 0.13725491, 0.4117647, 1)
+outline_size = 15
+outline_color = Color(0.8156863, 1, 0.9764706, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_17lfe"]
+font = ExtResource("3_di205")
+font_size = 80
+font_color = Color(0.3137255, 0.7254902, 0.92156863, 1)
+outline_size = 20
+outline_color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+
+[node name="Helium" type="Node2D" unique_id=1261286634]
+
+[node name="theme" type="AudioStreamPlayer" parent="." unique_id=1739263863]
+stream = ExtResource("1_fl2j3")
+parameters/looping = true
+
+[node name="intro" type="AudioStreamPlayer" parent="." unique_id=561342966]
+stream = ExtResource("2_2fjf8")
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=58819221]
+
+[node name="Label" type="Label" parent="ui" unique_id=1887208481]
+offset_left = 1048.9999
+offset_top = 17.0
+offset_right = 1092.9999
+offset_bottom = 55.0
+scale = Vector2(1.8399951, 1.8399951)
+text = "90"
+label_settings = SubResource("LabelSettings_lfsbt")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="ui" unique_id=119750645]
+offset_left = 1165.0
+offset_top = 451.0
+offset_right = 1205.0
+offset_bottom = 491.0
+rotation = 0.75784945
+scale = Vector2(7.319999, 7.319999)
+color = Color(0.16078432, 0.19607843, 0.40784314, 1)
+
+[node name="Label2" type="Label" parent="ui" unique_id=545344729]
+offset_left = 919.0
+offset_top = 480.0
+offset_right = 1034.0
+offset_bottom = 578.0
+scale = Vector2(1.84, 1.5)
+text = "0/2"
+label_settings = SubResource("LabelSettings_17lfe")
+metadata/_edit_use_anchors_ = true

@@ -56,4 +56,7 @@ flat = true
 position = Vector2(0, -194)
 texture = ExtResource("3_rujrh")
 
+[connection signal="pressed" from="da/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="da/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="da/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="da/Button" to="." method="_on_button_pressed"]

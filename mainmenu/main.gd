@@ -1,12 +1,17 @@
 extends Node2D
 
 const LEVEL = preload("uid://3md2ko84i7u")
-const hel = preload("uid://c6bkpyn0bduf1")
+const ARGON = preload("uid://n5eal4xhgenr")
+const XENON = preload("uid://okbnx0fn8rux")
+const HELIUM = preload("uid://c6bkpyn0bduf1")
+
 @onready var a: AudioStreamPlayer = $"../a"
 @onready var b: AudioStreamPlayer = $"../b"
 @onready var fktitle: Sprite2D = $"../intro/title"
 @onready var title: Sprite2D = $title
 @onready var da: Sprite2D = $da
+const thing = preload("uid://bncpftq8x8ocv")
+
 
 func _ready() -> void:
 	a.play()
@@ -32,8 +37,29 @@ func bring():
 	t.tween_property(da, "position", Vector2(0,76), 1)
 
 func _on_button_pressed() -> void:
-	var level = LEVEL.instantiate()
+	var level = HELIUM.instantiate()
 	add_sibling(level)
 	Globals.player_camera.make_current()
 	Globals.set_level(1)
+	queue_free()
+
+func _on_button_4_pressed() -> void:
+	var pop = thing.instantiate()
+	add_child(pop)
+	pop.popup_centered() 
+
+
+func _on_button_3_pressed() -> void:
+	var level = ARGON.instantiate()
+	add_sibling(level)
+	Globals.player_camera.make_current()
+	Globals.set_level(3)
+	queue_free()
+
+
+func _on_button_2_pressed() -> void:
+	var level = XENON.instantiate()
+	add_sibling(level)
+	Globals.player_camera.make_current()
+	Globals.set_level(5)
 	queue_free()
