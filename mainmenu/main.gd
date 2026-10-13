@@ -37,6 +37,7 @@ func bring():
 	t.tween_property(da, "position", Vector2(0,76), 1)
 
 func _on_button_pressed() -> void:
+	Globals.update()
 	var level = HELIUM.instantiate()
 	add_sibling(level)
 	Globals.player_camera.make_current()
@@ -44,13 +45,15 @@ func _on_button_pressed() -> void:
 	queue_free()
 
 func _on_button_4_pressed() -> void:
+	Globals.update()
 	var pop = thing.instantiate()
 	add_child(pop)
 	pop.popup_centered() 
 
 
 func _on_button_3_pressed() -> void:
-	var level = ARGON.instantiate()
+	Globals.update()
+	var level = XENON.instantiate()
 	add_sibling(level)
 	Globals.player_camera.make_current()
 	Globals.set_level(3)
@@ -58,7 +61,8 @@ func _on_button_3_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
-	var level = XENON.instantiate()
+	Globals.update()
+	var level = ARGON.instantiate()
 	add_sibling(level)
 	Globals.player_camera.make_current()
 	Globals.set_level(5)

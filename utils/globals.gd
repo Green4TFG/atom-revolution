@@ -27,6 +27,12 @@ var RING_SUMS = []
 var needed
 
 func _ready() -> void:
+	RING_COUNTS = ELECTRON_COUNTS[ELEMENT-1]
+	for i in RING_COUNTS.size() :
+		RING_SUMS.append( RING_COUNTS.slice(0,i+1).reduce(sum,0))
+
+func update():
+	RING_COUNTS = ELECTRON_COUNTS[ELEMENT-1]
 	for i in RING_COUNTS.size() :
 		RING_SUMS.append( RING_COUNTS.slice(0,i+1).reduce(sum,0))
 
