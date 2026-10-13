@@ -18,6 +18,7 @@ const nuetrons = [2, 4, 7, 12, 33, 44]
 @export var element = 1
 var ring_counts = electrons[element-1]
 var total_electrons = ring_counts.reduce(sum, 0)
+var max_electrons = total_electrons
 var rings = 0
 var ring_sums = []
 
@@ -32,6 +33,7 @@ func _ready() -> void:
 		ring_sums.append( ring_counts.slice(0,i+1).reduce(sum,0))
 	add_nuclei()
 	total_electrons = ring_counts.reduce(sum, 0)
+	max_electrons = total_electrons
 	var s = 1+element/5.0+3
 	hitty.scale = Vector2(s,s)
 	add_electrons()
