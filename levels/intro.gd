@@ -10,7 +10,6 @@ extends Node2D
 var dome = false
 
 func _ready() -> void:
-	get_tree().paused = true
 	camera.make_current()
 	title.modulate = Color(1,1,1,0)
 	var frame1_tween = create_tween()
@@ -41,16 +40,15 @@ func _ready() -> void:
 	pt2.set_ease(Tween.EASE_IN_OUT)
 	pt2.tween_property(title, "modulate", Color(1,1,1,1), 1)
 	await pt2.finished
-	level.make()
 	unseen()
 
 func unseen():
 	if dome:
-		pass
+		return
 	level.show()
+	level.make()
+	title.hide()
 	dome = true
-	get_tree().paused = false
-	
 	var bgsc = create_tween()
 	bgsc.set_trans(Tween.TRANS_EXPO)
 	bgsc.set_ease(Tween.EASE_OUT)
@@ -81,7 +79,6 @@ func unseen():
 		
 func _process(_delta: float) -> void:
 	if(Input.is_action_just_pressed("mouseleft") and visible):
-		level.make()
 		unseen()
 	
 	

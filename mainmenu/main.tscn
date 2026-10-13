@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cyq2rsuffchpr" path="res://mainmenu/main.gd" id="1_1l286"]
 [ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="1_u11kd"]
+[ext_resource type="Texture2D" uid="uid://cq1oh3ps8kyp5" path="res://assets/period.png" id="3_q5cwt"]
 [ext_resource type="Texture2D" uid="uid://cr527bwbva7dv" path="res://assets/Logo_Revalence.png" id="3_rujrh"]
+[ext_resource type="Texture2D" uid="uid://gciceklxtcdq" path="res://assets/periodC.png" id="4_n3ycj"]
+[ext_resource type="Texture2D" uid="uid://udqebaa12e01" path="res://assets/PeriodXE.png" id="5_fy5to"]
+[ext_resource type="Texture2D" uid="uid://cmnqu7yiynkl" path="res://assets/periodAR.png" id="6_5yy6e"]
+[ext_resource type="Texture2D" uid="uid://brjew2q07bi07" path="res://assets/periodHE.png" id="7_7yxyx"]
 
 [node name="Main" type="Node2D" unique_id=543285711]
 script = ExtResource("1_1l286")
@@ -10,37 +15,45 @@ script = ExtResource("1_1l286")
 [node name="Parallax" parent="." unique_id=571539524 instance=ExtResource("1_u11kd")]
 position = Vector2(1, 0)
 
-[node name="Button" type="Button" parent="." unique_id=802538227]
-offset_left = -271.0
-offset_top = 68.0
-offset_right = -116.0
-offset_bottom = 187.0
-text = "HELIUM
-BEGINNER
-"
+[node name="da" type="Sprite2D" parent="." unique_id=499684926]
+position = Vector2(0, 910.99994)
+scale = Vector2(1.5462964, 1.5462962)
+texture = ExtResource("3_q5cwt")
 
-[node name="Button2" type="Button" parent="." unique_id=1242634448]
-offset_left = -75.0
-offset_top = 68.0
-offset_right = 80.0
-offset_bottom = 187.0
-text = "ARGON
-INTERMEDIATE
-"
+[node name="Button4" type="Button" parent="da" unique_id=1838261734]
+offset_left = -196.0
+offset_top = -30.0
+offset_right = -164.0
+offset_bottom = 2.0
+icon = ExtResource("4_n3ycj")
+flat = true
 
-[node name="Button3" type="Button" parent="." unique_id=2009074267]
-offset_left = 135.0
-offset_top = 68.0
-offset_right = 290.0
-offset_bottom = 187.0
-text = "XENON
-EXPERT
-"
+[node name="Button3" type="Button" parent="da" unique_id=2009074267]
+offset_left = -168.0
+offset_top = 26.0
+offset_right = 88.0
+offset_bottom = 58.0
+icon = ExtResource("5_fy5to")
+flat = true
+
+[node name="Button2" type="Button" parent="da" unique_id=1242634448]
+offset_left = -168.0
+offset_top = -2.0
+offset_right = 88.0
+offset_bottom = 30.0
+icon = ExtResource("6_5yy6e")
+flat = true
+
+[node name="Button" type="Button" parent="da" unique_id=802538227]
+offset_left = -168.0
+offset_top = -30.0
+offset_right = 88.0
+offset_bottom = 2.0
+icon = ExtResource("7_7yxyx")
+flat = true
 
 [node name="title" type="Sprite2D" parent="." unique_id=246385066]
 position = Vector2(0, -194)
 texture = ExtResource("3_rujrh")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="da/Button" to="." method="_on_button_pressed"]
