@@ -3,6 +3,8 @@
 [ext_resource type="AudioStream" uid="uid://l2aligl0fhnq" path="res://music/helium_loop.mp3" id="1_55yis"]
 [ext_resource type="AudioStream" uid="uid://c3tmtaa6600r3" path="res://music/helium_intro.mp3" id="2_h55a4"]
 [ext_resource type="FontFile" uid="uid://cu1y4rt4mnsqi" path="res://assets/Impact.ttf" id="3_fplaf"]
+[ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="4_fplaf"]
+[ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_lfsbt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfsbt"]
 font = ExtResource("3_fplaf")
@@ -57,3 +59,23 @@ scale = Vector2(1.84, 1.5)
 text = "0/2"
 label_settings = SubResource("LabelSettings_17lfe")
 metadata/_edit_use_anchors_ = true
+
+[node name="Parallax" parent="." unique_id=571539524 instance=ExtResource("4_fplaf")]
+
+[node name="enemy" parent="." unique_id=276251561 instance=ExtResource("5_lfsbt")]
+position = Vector2(-230, 245)
+
+[node name="enemy2" parent="." unique_id=606631734 instance=ExtResource("5_lfsbt")]
+position = Vector2(762, 4)
+
+[node name="enemy3" parent="." unique_id=1231178905 instance=ExtResource("5_lfsbt")]
+position = Vector2(765, 682)
+
+[node name="enemy4" parent="." unique_id=1825146967 instance=ExtResource("5_lfsbt")]
+position = Vector2(195, 521)
+
+[node name="enemy5" parent="." unique_id=1818478398 instance=ExtResource("5_lfsbt")]
+position = Vector2(1187, 280)
+
+[node name="enemy6" parent="." unique_id=103837068 instance=ExtResource("5_lfsbt")]
+position = Vector2(1190, 958)

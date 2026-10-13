@@ -3,6 +3,9 @@
 [ext_resource type="AudioStream" uid="uid://l2aligl0fhnq" path="res://music/helium_loop.mp3" id="1_0ib6d"]
 [ext_resource type="AudioStream" uid="uid://c3tmtaa6600r3" path="res://music/helium_intro.mp3" id="2_hcvae"]
 [ext_resource type="FontFile" uid="uid://cu1y4rt4mnsqi" path="res://assets/Impact.ttf" id="3_s0lf1"]
+[ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="4_46mg2"]
+[ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="5_v50d4"]
+[ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="6_7uwku"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfsbt"]
 font = ExtResource("3_s0lf1")
@@ -57,3 +60,53 @@ scale = Vector2(1.84, 1.5)
 text = "0/2"
 label_settings = SubResource("LabelSettings_17lfe")
 metadata/_edit_use_anchors_ = true
+
+[node name="enemy3" parent="." unique_id=276251561 instance=ExtResource("4_46mg2")]
+position = Vector2(99, 482)
+element = 3
+
+[node name="enemy2" parent="." unique_id=1243020100 instance=ExtResource("4_46mg2")]
+position = Vector2(780, 220)
+element = 3
+
+[node name="enemy" parent="." unique_id=1920485623 instance=ExtResource("4_46mg2")]
+position = Vector2(126, 42)
+element = 3
+
+[node name="Parallax" parent="." unique_id=571539524 instance=ExtResource("5_v50d4")]
+
+[node name="electron" parent="." unique_id=1411004449 instance=ExtResource("6_7uwku")]
+position = Vector2(217, 150)
+
+[node name="electron2" parent="." unique_id=1559927479 instance=ExtResource("6_7uwku")]
+position = Vector2(72, 276)
+
+[node name="electron3" parent="." unique_id=692103054 instance=ExtResource("6_7uwku")]
+position = Vector2(264, 357)
+
+[node name="electron4" parent="." unique_id=1737169463 instance=ExtResource("6_7uwku")]
+position = Vector2(403, 290)
+
+[node name="electron5" parent="." unique_id=417868826 instance=ExtResource("6_7uwku")]
+position = Vector2(306, 191)
+
+[node name="electron6" parent="." unique_id=492386221 instance=ExtResource("6_7uwku")]
+position = Vector2(161, 317)
+
+[node name="electron7" parent="." unique_id=1899860586 instance=ExtResource("6_7uwku")]
+position = Vector2(353, 398)
+
+[node name="electron8" parent="." unique_id=164493674 instance=ExtResource("6_7uwku")]
+position = Vector2(492, 331)
+
+[node name="electron9" parent="." unique_id=265772409 instance=ExtResource("6_7uwku")]
+position = Vector2(457, 354)
+
+[node name="electron10" parent="." unique_id=1608740283 instance=ExtResource("6_7uwku")]
+position = Vector2(312, 480)
+
+[node name="electron11" parent="." unique_id=1141699762 instance=ExtResource("6_7uwku")]
+position = Vector2(504, 561)
+
+[node name="electron12" parent="." unique_id=1643922999 instance=ExtResource("6_7uwku")]
+position = Vector2(643, 494)
