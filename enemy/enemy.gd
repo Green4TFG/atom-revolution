@@ -79,6 +79,33 @@ func add_electrons():
 		electron_folder.add_child(electron)
 		update_electrons()
 
+func add_electron():
+	total_electrons+=1
+	rings = Globals.find_ring(total_electrons, ring_sums)
+	var electron = ELECTRON_VISUAL.instantiate()
+	electron.parent = self
+	electron.global_position = global_position
+	electron.ring = Globals.rings
+	electron.true_number = total_electrons
+	electron.number = total_electrons - 1 - ((ring_counts.slice(0,Globals.rings - 1)).reduce(sum,0)  if rings > 0 else 0)
+	electron.calc_vector()
+	electron.get_node("hitbox").collision_layer = 6
+	electron.get_node("hitbox").collision_mask = 6
+	
+	electrons.append(electron)
+	electron.visible = false
+	electron_folder.call_deferred("add_child", electron)
+	update_electrons()
+	
+
+
+func lose_electron():
+	for i in electron_folder.get_children():
+		if(i.true_number == total_electrons):
+			i.queue_free()
+			total_electrons -= 1
+			rings = Globals.find_ring(total_electrons, ring_sums)
+
 
 func add_nuclei():
 	#creates nuetrons

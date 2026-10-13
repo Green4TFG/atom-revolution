@@ -40,9 +40,11 @@ func electron_steal(electron: electron_visual):
 	if(winner == "player"):
 		print("yay")
 		player.add_electron()
+		electron.get_parent().get_parent().lose_electron()
 	elif(winner == "enemy"):
 		print("no")
 		player.lose_electron()
+		electron.get_parent().get_parent().add_electron()
 	get_tree().paused = true
 	CameraTransition.transition(electron.camera, player_camera)
 	get_tree().paused = false
