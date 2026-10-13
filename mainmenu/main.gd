@@ -26,4 +26,5 @@ func _on_button_pressed() -> void:
 	var level = LEVEL.instantiate()
 	add_sibling(level)
 	Globals.player_camera.make_current()
+	Globals.set_level(1)
 	queue_free()

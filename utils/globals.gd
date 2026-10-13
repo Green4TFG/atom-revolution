@@ -9,6 +9,7 @@ const FIRST_RING = 40
 var player
 var target
 var rings = 0.0
+var time = 90
 
 const CUTSCENE = preload("uid://bhlww2nal8pd5")
 
@@ -18,6 +19,7 @@ const ELECTRON_COUNTS = [[2],[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,1
 var ELEMENT = 3 #1 is Helium, 5 is Radon
 var RING_COUNTS = ELECTRON_COUNTS[ELEMENT-1]
 var RING_SUMS = []
+var needed
 
 func _ready() -> void:
 	for i in RING_COUNTS.size() :
@@ -38,6 +40,10 @@ func find_ring(electron_num: float,ring_array):
 		if(electron_num - ring_array[i] < 1):
 			return float(i) 
 
-
 func sum(accum, number):
 	return accum + number
+
+func set_level(element):
+	ELEMENT = element
+	RING_COUNTS = ELECTRON_COUNTS[ELEMENT-1]
+	needed = RING_SUMS[element]

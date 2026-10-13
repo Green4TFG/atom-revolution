@@ -37,7 +37,7 @@ func _ready() -> void:
 	player.add_child(plaface)
 	var nucle = Globals.player.find_child("nuclei folder").duplicate()
 	player.add_child(nucle)
-	var s = 2.0/Globals.ELEMENT
+	var s = 1.3/(Globals.target.element/2)
 	player.scale = Vector2(s,s)
 	plaface.play("serious")
 	
@@ -45,7 +45,7 @@ func _ready() -> void:
 	enemy.add_child(eneface)
 	nucle = Globals.target.find_child("nuclei folder").duplicate()
 	enemy.add_child(nucle)
-	s = 3.0/Globals.target.element
+	s = 1.3/(Globals.target.element/2)
 	enemy.scale = Vector2(s,s)
 	enemy.rotation = 0
 	eneface.play("serious")
@@ -141,7 +141,7 @@ func _physics_process(delta: float) -> void:
 			if(abs(angle_difference(pointer.rotation, pivot.rotation))) < 0.25*PI:
 				print("hit")
 				playerbar.value += 20 * (1-(abs(angle_difference(pointer.rotation, pivot.rotation)))*2.0)
-				ROT_SPEED += 0.3 * (ROT_SPEED/abs(ROT_SPEED)) / Globals.target.element
+				ROT_SPEED += 0.3 * ((ROT_SPEED/abs(ROT_SPEED)) / (Globals.target.element/2))
 				ROT_SPEED *= -1
 				var tib = create_tween()
 				tib.set_ease(Tween.EASE_IN_OUT)
