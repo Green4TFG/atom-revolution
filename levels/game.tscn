@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cr527bwbva7dv" path="res://assets/Logo_Revalence.png" id="5_arvxu"]
 [ext_resource type="AudioStream" uid="uid://g0fxklnf8n87" path="res://music/mainmenu_intro.mp3" id="6_cnc74"]
 [ext_resource type="AudioStream" uid="uid://da7avmlnb4nno" path="res://music/mainmenu_loop.mp3" id="7_vpik0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_vnv7o"]
+[ext_resource type="PackedScene" uid="uid://cng8q8hb3xus8" path="res://lose.tscn" id="9_kc1m6"]
+[ext_resource type="PackedScene" uid="uid://ljycdr4gxiry" path="res://win.tscn" id="10_y7kp8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_17lfe"]
 font = ExtResource("4_vpik0")
@@ -20,15 +20,6 @@ font_size = 125
 [node name="intro" type="Node2D" parent="." unique_id=563622562]
 process_mode = 3
 script = ExtResource("1_30w35")
-
-[node name="Label" type="Label" parent="intro" unique_id=1573529745]
-z_index = 10
-offset_left = 429.0
-offset_top = 296.0
-offset_right = 572.0
-offset_bottom = 319.0
-text = "Left mouse to skip"
-label_settings = SubResource("LabelSettings_vnv7o")
 
 [node name="ColorRect" type="ColorRect" parent="intro" unique_id=971004524]
 offset_left = -1647.0
@@ -71,3 +62,11 @@ stream = ExtResource("6_cnc74")
 [node name="b" type="AudioStreamPlayer" parent="." unique_id=1320265301]
 stream = ExtResource("7_vpik0")
 parameters/looping = true
+
+[node name="lose" parent="." unique_id=512384910 instance=ExtResource("9_kc1m6")]
+visible = false
+z_index = 1000
+
+[node name="win" parent="." unique_id=1347011422 instance=ExtResource("10_y7kp8")]
+visible = false
+z_index = 1000

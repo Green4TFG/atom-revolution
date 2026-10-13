@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cng8q8hb3xus8"]
+
+[ext_resource type="Script" uid="uid://bg2udee1gaop5" path="res://lose.gd" id="1_rtc1j"]
+
+[node name="lose" type="ColorRect" unique_id=512384910]
+offset_left = -1552.0
+offset_top = -922.0
+offset_right = 1514.0
+offset_bottom = 978.0
+script = ExtResource("1_rtc1j")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=278979929]
+position = Vector2(1557, 922)
+zoom = Vector2(4, 4)
+
+[node name="Label" type="Label" parent="." unique_id=1650660030]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 1442.0
+offset_top = 876.0
+offset_right = 1851.0
+offset_bottom = 1004.0
+text = "You failed to overcome the 
+ force of the noble gasses."

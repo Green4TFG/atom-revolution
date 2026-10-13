@@ -14,6 +14,8 @@ var winner = ""
 
 signal win
 
+signal lose
+
 const CUTSCENE = preload("uid://bhlww2nal8pd5")
 
 const ELECTRON_COUNTS = [[2],[2,8],[2,8,8],[2,8,18,8],[2,8,18,18,8],[2,8,18,32,18,8],[2,8,18,32,32,18,8]]
@@ -53,6 +55,8 @@ func electron_steal(electron: electron_visual):
 		print("no")
 		if(!player.electron_num == 0):
 			player.lose_electron()
+		else:
+			lose.emit()
 		if(!electron.get_parent().get_parent().total_electrons == electron.get_parent().get_parent().max_electrons):
 			print(electron.get_parent().get_parent().total_electrons)
 			print(electron.get_parent().get_parent().max_electrons)

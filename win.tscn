@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ljycdr4gxiry"]
+
+[ext_resource type="Script" uid="uid://dsj2a88u3lyvt" path="res://win.gd" id="1_wao2c"]
+
+[node name="ColorRect" type="ColorRect" unique_id=1347011422]
+offset_left = -129.0
+offset_top = -79.0
+offset_right = 133.0
+offset_bottom = 95.0
+script = ExtResource("1_wao2c")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=366279966]
+position = Vector2(128, 77)
+zoom = Vector2(6, 6)
+
+[node name="Label" type="Label" parent="." unique_id=1914262842]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 95.0
+offset_top = 66.0
+offset_right = 161.0
+offset_bottom = 89.0
+text = "You win!"
