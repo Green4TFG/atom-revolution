@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://cu1y4rt4mnsqi" path="res://assets/Impact.ttf" id="3_fplaf"]
 [ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="4_fplaf"]
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="5_lfsbt"]
+[ext_resource type="PackedScene" uid="uid://dka45pj5mhaer" path="res://player/player.tscn" id="6_lfsbt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfsbt"]
 font = ExtResource("3_fplaf")
@@ -79,3 +80,6 @@ position = Vector2(1187, 280)
 
 [node name="enemy6" parent="." unique_id=103837068 instance=ExtResource("5_lfsbt")]
 position = Vector2(1190, 958)
+
+[node name="player" parent="." unique_id=65502379 instance=ExtResource("6_lfsbt")]
+position = Vector2(539, 281)

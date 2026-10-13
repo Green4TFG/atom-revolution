@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpv6u1irvd0xh" path="res://enemy/enemy.tscn" id="4_46mg2"]
 [ext_resource type="PackedScene" uid="uid://c4qugunscnbob" path="res://levels/parallax.tscn" id="5_v50d4"]
 [ext_resource type="PackedScene" uid="uid://1dphh42e64sk" path="res://electron/electron.tscn" id="6_7uwku"]
+[ext_resource type="PackedScene" uid="uid://dka45pj5mhaer" path="res://player/player.tscn" id="7_v50d4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lfsbt"]
 font = ExtResource("3_s0lf1")
@@ -110,3 +111,6 @@ position = Vector2(504, 561)
 
 [node name="electron12" parent="." unique_id=1643922999 instance=ExtResource("6_7uwku")]
 position = Vector2(643, 494)
+
+[node name="player" parent="." unique_id=65502379 instance=ExtResource("7_v50d4")]
+position = Vector2(584, 135)
